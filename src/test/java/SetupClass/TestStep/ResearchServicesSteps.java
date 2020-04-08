@@ -68,12 +68,11 @@ public class ResearchServicesSteps extends Setup {
 
 	@Then("^user click on submit button on rs form$")
 	public void user_click_on_submit_button_on_rs_form() throws Throwable {
-		try {
+		
 		Thread.sleep(1000);
 		driver.findElement(By.id("finalSubmit")).submit();
 		Thread.sleep(1000);
-		}
-		catch (NoSuchElementException popup) {
+		
 	}
 		/*
 		 * System.out.print("form is submitted at:->> ");
