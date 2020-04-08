@@ -69,7 +69,6 @@ public class BlogComment extends Setup {
 		Thread.sleep(1000);
 		webElement Blog = wait.until(ExcpectedConditions.elementToBeClickable(By.xpath("/html/body/div[2]/header/div[1]/div[2]/div/nav/div/div/ul/li[6]/a")));
 		driver.get("https://www.slideteam.net/Blog");
-		Blog.click();
 		Thread.sleep(1000);
 	}
 	
