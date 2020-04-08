@@ -20,7 +20,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 
 
-public class BlogComment_paid_user extends Setup {
+public class BlogComment extends Setup {
 	
 	WebDriverWait wait = new WebDriverWait(driver,50);
          
