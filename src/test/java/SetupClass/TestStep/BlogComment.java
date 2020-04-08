@@ -25,28 +25,20 @@ public class BlogComment extends Setup {
 	WebDriverWait wait = new WebDriverWait(driver,50);
          
 	
-        @Given("^user is on blog page$")
-	public void user_is_on_blog_page() throws Throwable {
-		Thread.sleep(1000);
-		driver.findElement(By.xpath("/html/body/div[2]/header/div[1]/div[2]/div/nav/div/div/ul/li[6]/a")).click();
-		//* driver.get("https://www.slideteam.net/Blog");
-		Thread.sleep(1000);
-	}
 	
-	
-	@Then("^user is already on blog form$")
+	@Given("^user is already on blog form$")
 	public void user_is_already_on_blog_form() throws Throwable {
 		Thread.sleep(2000);
 		driver.get("https://www.slideteam.net/blog/using-images-in-presentations-11-dos-and-donts/");
 		Thread.sleep(3000);
-		  //* driver.manage().deleteAllCookies();
+		driver.manage().deleteAllCookies();
 		   Thread.sleep(2000);
 	}
 	
         @Then("^user close the coupon popup$")
 	public void user_close_the_coupon_popup() throws Throwable {
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("//*[@id='blog-detail-popup']/div/div/div[1]/button/span")).click();
+		driver.findElement(By.xpath("//*[@id='blog-detail-popup']/div/div/div[1]/button/span")).dismiss();
 		Thread.sleep(1000);
 	}
 	
