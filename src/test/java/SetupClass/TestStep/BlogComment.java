@@ -25,7 +25,7 @@ import cucumber.api.java.en.Then;
 public class BlogComment extends Setup {
 	
 	WebDriverWait wait = new WebDriverWait(driver,50);
-         
+         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	
 	
 	@Given("^user is already on blog form$")
