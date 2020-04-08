@@ -86,7 +86,7 @@ public class BlogComment extends Setup {
 		Thread.sleep(2000);
 		WebElement Popup = wait.Until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='blog-detail-popup']/div/div/div[1]/button/span")));
 		driver.findElement(By.xpath("//*[@id='blog-detail-popup']/div/div/div[1]/button/span")).click();
-		Popup.close();
+		Popup.click();
 		Thread.sleep(1000);
 	}
 
