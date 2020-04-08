@@ -28,9 +28,11 @@ public class ResearchServicesSteps extends Setup {
 	 }
          catch (NoSuchElementException popup) {
 	 }
-	}
+	
 		Thread.sleep(2000);
 		
+	}
+	
 	@Then("^user enter name on rs form$")
 	public void user_enter_name_on_rs_form()  throws Throwable {
 		Thread.sleep(1000);
