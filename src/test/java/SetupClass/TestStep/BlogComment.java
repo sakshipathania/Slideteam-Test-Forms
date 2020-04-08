@@ -63,7 +63,13 @@ public class BlogComment extends Setup {
 	    old_paid_login_btn.click();
            }
 
-       
+        @Then("^user is on blog page$")
+	public void user_is_on_blog_page() throws throwable {
+		Thread.sleep(1000);
+		driver.get("https://www.slideteam.net/blog/");
+		Thread.sleep(1000);
+	}
+	
 	@Then("^user is already on blog form$")
 	public void user_is_already_on_blog_form() throws Throwable {
 		Thread.sleep(2000);
