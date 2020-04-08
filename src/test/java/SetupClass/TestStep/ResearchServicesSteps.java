@@ -19,13 +19,9 @@ public class ResearchServicesSteps extends Setup {
 	
 	@Given("^user is already on Submit Your Business Research Requirements form$")
 	public void user_is_already_on_Submit_Your_Business_Research_Requirements_form() throws Throwable  {
-		try {
 		Thread.sleep(3000);
 		driver.findElement(By.cssSelector("div.links:nth-child(6) > ul:nth-child(2) > li:nth-child(10) > a:nth-child(1)")).click();
-		Thread.sleep(2000);
-		}
-		catch ( NoSuchElementException popup) {
-			
+		Thread.sleep(2000);	
 	}
 
 	@Then("^user enter name on rs form$")
