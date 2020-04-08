@@ -67,8 +67,15 @@ public class BlogComment extends Setup {
         @Then("^user is on blog page$")
 	public void user_is_on_blog_page() throws Throwable {
 		Thread.sleep(1000);
-		webElement Blog = wait.until(ExcpectedConditions.elementToBeClickable(By.xpath("/html/body/div[2]/header/div[1]/div[2]/div/nav/div/div/ul/li[6]/a")));
-		driver.get("https://www.slideteam.net/Blog");
+		driver.findElement(By.xpath("/html/body/div[2]/header/div[1]/div[2]/div/nav/div/div/ul/li[6]/a"))).click();
+		//* driver.get("https://www.slideteam.net/Blog");
+		Thread.sleep(1000);
+	}
+	
+	@Then("^user close the coupon popup$")
+	public void user_close_the_coupon_popup() throws Throwable {
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//*[@id='blog-detail-popup']/div/div/div[1]/button/span")).click();
 		Thread.sleep(1000);
 	}
 	
@@ -81,12 +88,6 @@ public class BlogComment extends Setup {
 		   Thread.sleep(2000);
 	}
 	
-	@Then("^user close the coupon popup$")
-	public void user_close_the_coupon_popup() throws Throwable {
-		Thread.sleep(2000);
-		webElement Popup = driver.findElement(By.xpath("//*[@id='blog-detail-popup']/div/div/div[1]/button/span")).click();
-		Thread.sleep(1000);
-	}
 
 	@Then("^user enter name on blog form$") 
 	public void user_enter_name_on_blog_form() throws Throwable {
