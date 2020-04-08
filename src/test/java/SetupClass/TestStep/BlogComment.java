@@ -24,47 +24,8 @@ public class BlogComment extends Setup {
 	
 	WebDriverWait wait = new WebDriverWait(driver,50);
          
-	@Given("^user is already on sign in page$")
-        public void user_is_already_on_sign_in_page() throws InterruptedException  {
-    
-	driver.get(AppURL);
-	driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
-	log.info("It's opening the website URL");
-	Thread.sleep(1000);
-	driver.get("https://www.slideteam.net");
-	Thread.sleep(2000);
-	driver.get("https://www.slideteam.net");
-	Thread.sleep(2000);
-    driver.manage().deleteAllCookies();
-    Thread.sleep(2000);
-	try {
-		driver.findElement(By.cssSelector(".authorization-link > a:nth-child(1)")).click();
-		Thread.sleep(2000);
-		log.info("It's opening the website URL");
-	} 
-	catch (NoSuchElementException popup) {
-	}
-      }
-
-         @Then("^user enter email and password $")
-         public void user_enter_email_and_password() throws InterruptedException  {
-    
-	WebElement old_paid_email = wait.until(ExpectedConditions.elementToBeClickable(By.id("email")));
-        old_paid_email.sendKeys("Sakshi.pathania@slidetech.in");
-    
-        WebElement old_paid_pass = wait.until(ExpectedConditions.elementToBeClickable(By.id("pass")));
-        old_paid_pass.sendKeys("Sakshi@456");
-        }
-
-         @Then("^user click on login button $")
-         public void user_click_on_login_button() throws InterruptedException  {
-   
-	 WebElement old_paid_login_btn=wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button.login > span:nth-child(1)")));
-	    old_paid_login_btn.click();
-           }
 	
-	
-        @Then("^user is on blog page$")
+        @Given("^user is on blog page$")
 	public void user_is_on_blog_page() throws Throwable {
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("/html/body/div[2]/header/div[1]/div[2]/div/nav/div/div/ul/li[6]/a")).click();
