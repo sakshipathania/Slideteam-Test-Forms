@@ -51,21 +51,6 @@ public class BlogComment extends Setup {
 		Thread.sleep(1000);
 	}
 						    
-			
-	//* @Then("^user enter name on blog form$") 
-	/* public void user_enter_name_on_blog_form() throws Throwable {
-		Thread.sleep(1000);
-		driver.findElement(By.id("author")).sendKeys("SlideTeam Testing");
-		Thread.sleep(1000);
-	} 
-	
-	@Then("^user enter email on blog form$")
-	public void user_enter_email_on_blog_form() throws Throwable {
-		Thread.sleep(1000);
-		driver.findElement(By.id("email")).sendKeys("Sakshi.pathania@slidetech.in");
-		Thread.sleep(1000);
-	}	*/
-	
 	@Then("^user enter comment on blog form$")
 	public void user_enter_comment_on_blog_form() throws Throwable {
 		Thread.sleep(1000);
