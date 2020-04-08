@@ -64,7 +64,7 @@ public class BlogComment extends Setup {
            }
 
         @Then("^user is on blog page$")
-	public void user_is_on_blog_page() throws throwable {
+	public void user_is_on_blog_page() throws Throwable {
 		Thread.sleep(1000);
 		driver.get("https://www.slideteam.net/blog/");
 		Thread.sleep(1000);
