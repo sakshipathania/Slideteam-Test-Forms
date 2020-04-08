@@ -67,7 +67,7 @@ public class BlogComment extends Setup {
         @Then("^user is on blog page$")
 	public void user_is_on_blog_page() throws Throwable {
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("/html/body/div[2]/header/div[1]/div[2]/div/nav/div/div/ul/li[6]/a"))).click();
+		driver.findElement(By.xpath("/html/body/div[2]/header/div[1]/div[2]/div/nav/div/div/ul/li[6]/a")).click();
 		//* driver.get("https://www.slideteam.net/Blog");
 		Thread.sleep(1000);
 	}
