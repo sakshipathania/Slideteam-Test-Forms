@@ -32,27 +32,40 @@ public class ResearchServicesSteps extends Setup {
 	@Then("^user enter name on rs form$")
 	public void user_enter_name_on_rs_form()  throws Throwable {
 		Thread.sleep(1000);
+		try {
 		driver.findElement(By.id("name")).sendKeys("SlideTeam Testing");
 		Thread.sleep(1000);
+	} catch (NoSuchElementException popup) {
+	  }
+		
 	}
 
 	@Then("^user enter email on rs form$")
 	public void user_enter_email_on_rs_form() throws Throwable {
 		Thread.sleep(1000);
+		try {
 		driver.findElement(By.id("form_email")).sendKeys("slidetech.qa@gmail.com");
 		Thread.sleep(1000);
+	} catch (NoSuchElementException popup) {
+	  }
+		
 	}
 
 	@Then("^user enter mobile number on rs form$")
 	public void user_enter_mobile_number_on_rs_form()throws Throwable  {
 		Thread.sleep(1000);
+		try {
 		driver.findElement(By.id("telephone")).sendKeys("5678912345");
 		Thread.sleep(1000);
+	} catch  (NoSuchElementException popup) {
+	  }
+		
 	}
 
 	@Then("^user enter comment on rs form$")
 	public void user_enter_comment_on_rs_form()  throws Throwable{
 		Thread.sleep(1000);
+		try {
 		//driver.findElement(By.id("comment")).sendKeys("This is a text message for QA purposes sent by an automated program. Please ignore.");
 		SimpleDateFormat formatter= new SimpleDateFormat("dd-MM-yyyy 'at' HH:mm:ss z"); 
 	    Date date = new Date(System.currentTimeMillis());  
@@ -62,21 +75,32 @@ public class ResearchServicesSteps extends Setup {
 								"Page URL is:-> https://www.slideteam.net/powerpoint_presentation_design_services"+"\n"+ 
 								"Current Time is:->"+message_write_time);	
 		Thread.sleep(1000);
+	} catch (NoSuchElementException popup) {
+	  }
+		
 	}
 
 	@Then("^user enter captcha on rs form$")
 	public void user_enter_captcha_on_rs_form() throws Throwable {
 		Thread.sleep(1000);
+		try {
 		driver.findElement(By.id("captcha_business_research_services_captcha")).sendKeys("Aj7W2mtf9namwf55");
 		Thread.sleep(1000);
+	} catch (NoSuchElementException popup) {
+	  }
+		
 	}
 
 	@Then("^user click on submit button on rs form$")
 	public void user_click_on_submit_button_on_rs_form() throws Throwable {
 		
 		Thread.sleep(1000);
+		try {
 		driver.findElement(By.id("finalSubmit")).submit();
 		Thread.sleep(1000);
+		
+	} catch (NoSuchElementException popup) {
+	  }
 		
 	}
 		/*
