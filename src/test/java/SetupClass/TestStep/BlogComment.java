@@ -48,7 +48,7 @@ public class BlogComment extends Setup {
 	}
 	
 	@Then("^user goes to leave a comment$")
-	public void user_goes_to_leave_a_comment() throws throwable {
+	public void user_goes_to_leave_a_comment() throws Throwable {
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//*[@id='respond']/fieldset"));
 		Thread.sleep(2000);
