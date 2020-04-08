@@ -46,6 +46,13 @@ public class BlogComment extends Setup {
 		Thread.sleep(1000);
 	}
 	
+	@Given("^user is already on blog form$")
+	public void user_is_already_on_blog_form() throws Throwable {
+		Thread.sleep(2000);
+		driver.get("https://www.slideteam.net/blog/using-images-in-presentations-11-dos-and-donts/");
+		Thread.sleep(3000);
+		//* driver.manage().deleteAllCookies();
+		   Thread.sleep(2000);
 	
 	@Then("^user enter name on blog form$") 
 	public void user_enter_name_on_blog_form() throws Throwable {
@@ -55,13 +62,10 @@ public class BlogComment extends Setup {
 	}
 	
 	@Then("^user enter email on blog form$")
-	public void user_enter_email_on_blog_form() throws Throwable{
+	public void user_enter_email_on_blog_form() throws Throwable {
 		Thread.sleep(1000);
-		try {
 		driver.findElement(By.id("email")).sendKeys("Sakshi.pathania@slidetech.in");
 		Thread.sleep(1000);
-	} catch (NoSuchElementException popup) {
-		}
 	}	
 	
 	@Then("^user enter comment on blog form$")
