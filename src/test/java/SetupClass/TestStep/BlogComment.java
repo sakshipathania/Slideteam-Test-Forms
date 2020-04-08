@@ -72,6 +72,13 @@ public class BlogComment extends Setup {
 		   driver.manage().deleteAllCookies();
 		   Thread.sleep(2000);
 	}
+	
+	@Then("^user close the coupon popup$")
+	public void user_close_the_coupon_popup() throws Throwable {
+		Thread(2000);
+		driver.findElement(By.xpath("//*[@id="blog-detail-popup"]/div/div/div[1]/button")).click();
+		Thread(1000);
+	}
 
 	@Then("^user enter name on blog form$") 
 	public void user_enter_name_on_blog_form() throws Throwable {
