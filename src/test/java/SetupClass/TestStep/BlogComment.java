@@ -46,13 +46,14 @@ public class BlogComment extends Setup {
 		Thread.sleep(1000);
 	}
 	
-	@Given("^user is already on blog form$")
+	@Then("^user is already on blog form$")
 	public void user_is_already_on_blog_form() throws Throwable {
 		Thread.sleep(2000);
 		driver.get("https://www.slideteam.net/blog/using-images-in-presentations-11-dos-and-donts/");
 		Thread.sleep(3000);
 		//* driver.manage().deleteAllCookies();
-		   Thread.sleep(2000);
+		   //* Thread.sleep(2000);
+	}
 	
 	@Then("^user enter name on blog form$") 
 	public void user_enter_name_on_blog_form() throws Throwable {
@@ -89,17 +90,14 @@ public class BlogComment extends Setup {
 	    Thread.sleep(2000);
 	    blog_captcha.sendKeys("Aj7W2mtf9namwf55");
 	    Thread.sleep(3000);
-
-	    
-	    
+   
 	}
 
 	@Then("^user click on Submit button on blog form$")
 	public void user_click_on_Submit_button_on_blog_form()throws Throwable {
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//span[contains(.,'Leave a comment')]")).click();;
-		Thread.sleep(3000);
-		
+		Thread.sleep(3000);		
 		
 	}
 	
