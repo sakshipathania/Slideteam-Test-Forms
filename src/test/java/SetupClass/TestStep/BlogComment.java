@@ -85,7 +85,7 @@ public class BlogComment extends Setup {
 	@Then("^user close the coupon popup$")
 	public void user_close_the_coupon_popup() throws Throwable {
 		Thread.sleep(2000);
-		WebElement Popup = wait.Until(ExpectedConditions.ElementIsVisible(By.xpath("//*[@id='blog-detail-popup']/div/div/div[1]/button/span")));
+		WebElement Popup = wait.Until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='blog-detail-popup']/div/div/div[1]/button/span")));
 		driver.findElement(By.xpath("//*[@id='blog-detail-popup']/div/div/div[1]/button/span")).click();
 		Popup.close();
 		Thread.sleep(1000);
