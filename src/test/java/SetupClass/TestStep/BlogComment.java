@@ -14,6 +14,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.remote.DesiredCapabilities;  
+import org.openqa.selenium.Alert; 
 
 import SetupClass.Setup;
 import cucumber.api.java.en.Given;
@@ -38,7 +40,9 @@ public class BlogComment extends Setup {
         @Then("^user close the coupon popup$")
 	public void user_close_the_coupon_popup() throws Throwable {
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("//*[@id='blog-detail-popup']/div/div/div[1]/button/span")).dismiss();
+		driver.findElement(By.xpath("//*[@id='blog-detail-popup']/div/div/div[1]/button/span"));
+		Alert confirmBox = (Alert) driver.switchTo().alert();  
+		 ((Alert) confirmBox).dismiss();
 		Thread.sleep(1000);
 	}
 	
