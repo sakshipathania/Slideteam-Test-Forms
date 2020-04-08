@@ -6,12 +6,11 @@ import java.io.FileWriter;
 import java.sql.Date;
 import java.sql.Driver;
 import java.text.SimpleDateFormat;
-import java.util.concurrent.TimeUnit;
+
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import SetupClass.Setup;
@@ -23,45 +22,7 @@ public class BlogComment extends Setup {
 	
 	WebDriverWait wait = new WebDriverWait(driver,50);
 
-        @Given("^user is already on sign in page epu$")
-       public void user_is_already_on_sign_in_page_epu() throws InterruptedException  {
-    
-	driver.get(AppURL);
-	driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
-	log.info("It's opening the website URL");
-	Thread.sleep(1000);
-	driver.get("https://www.slideteam.net");
-	Thread.sleep(2000);
-	driver.get("https://www.slideteam.net");
-	Thread.sleep(2000);
-         driver.manage().deleteAllCookies();
-         Thread.sleep(2000);
-	try {
-		driver.findElement(By.cssSelector(".authorization-link > a:nth-child(1)")).click();
-		Thread.sleep(2000);
-		log.info("It's opening the website URL");
-	} 
-	catch (NoSuchElementException popup) {
-	}
-     }
-
-       @Given("^user enter email and password epu$")
-       public void user_enter_email_and_password_epu() throws InterruptedException  {
-    
-	WebElement old_paid_email = wait.until(ExpectedConditions.elementToBeClickable(By.id("email")));
-        old_paid_email.sendKeys("Sakshi.pathania@slidetech.in");
-    
-        WebElement old_paid_pass = wait.until(ExpectedConditions.elementToBeClickable(By.id("pass")));
-        old_paid_pass.sendKeys("Sakshi@456");
-       }
-
-       @Given("^user click on login button epu$")
-       public void user_click_on_login_button_epu() throws InterruptedException  {
-   
-	 WebElement old_paid_login_btn=wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button.login > span:nth-child(1)")));
-	    old_paid_login_btn.click();
-            }
-	
+       
 	@Given("^user is already on blog form$")
 	public void user_is_already_on_blog_form() throws Throwable {
 		Thread.sleep(2000);
