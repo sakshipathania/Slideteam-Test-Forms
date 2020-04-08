@@ -16,7 +16,6 @@ import cucumber.api.java.en.Then;
 
 public class ResearchServicesSteps extends Setup {
 
-	 WebDriverWait wait = new WebDriverWait(driver,50);
 	
 	@Given("^user is already on Submit Your Business Research Requirements form$")
 	public void user_is_already_on_Submit_Your_Business_Research_Requirements_form() throws Throwable  {
