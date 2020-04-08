@@ -76,7 +76,7 @@ public class BlogComment extends Setup {
 	@Then("^user close the coupon popup$")
 	public void user_close_the_coupon_popup() throws Throwable {
 		Thread(2000);
-		driver.findElement(By.xpath("//*[@id="blog-detail-popup"]/div/div/div[1]/button")).click();
+		driver.findElement(By.xpath("//*[@id='blog-detail-popup']/div/div/div[1]/button")).click();
 		Thread(1000);
 	}
 
