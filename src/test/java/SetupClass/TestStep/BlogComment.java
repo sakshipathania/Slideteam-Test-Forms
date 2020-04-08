@@ -36,6 +36,7 @@ public class BlogComment extends Setup {
 		driver.manage().deleteAllCookies();
 		   Thread.sleep(2000);
 	}
+			    
 	
         @Then("^user close the coupon popup$")
 	public void user_close_the_coupon_popup() throws Throwable {
@@ -46,15 +47,13 @@ public class BlogComment extends Setup {
 		Thread.sleep(1000);
 	}
 	
-	@Then("^user is already on blog form$")
-	public void user_is_already_on_blog_form() throws Throwable {
+	@Then("^user goes to leave a comment$")
+	public void user_goes_to_leave_a_comment() throws throwable {
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//*[@id='respond']/fieldset"));
 		Thread.sleep(2000);
-		driver.get("https://www.slideteam.net/blog/using-images-in-presentations-11-dos-and-donts/");
-		Thread.sleep(3000);
-		//* driver.manage().deleteAllCookies();
-		   //* Thread.sleep(2000);
-	}
-	
+	}					    
+			
 	@Then("^user enter name on blog form$") 
 	public void user_enter_name_on_blog_form() throws Throwable {
 		Thread.sleep(1000);
