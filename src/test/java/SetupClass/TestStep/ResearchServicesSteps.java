@@ -22,11 +22,10 @@ public class ResearchServicesSteps extends Setup {
 	
 		Thread.sleep(3000);
 		try {
-		WebElement Submit = driver.findElement(By.cssSelector("div.links:nth-child(6) > ul:nth-child(2) > li:nth-child(10) > a:nth-child(1)")).click();
+		WebElement Submit = driver.findElement(By.cssSelector("div.links:nth-child(6) > ul:nth-child(2) > li:nth-child(10) > a:nth-child(1)"));
 		
-			JavascriptExecutor executor = (JavascriptExecutor)driver;
-                        executor.executeScript(“arguments[0].click();”, Submit);
-			Thread.sleep(2000);	
+		Submit.click();
+			Thread.sleep(3000);	
 	 }
           catch (NoSuchElementException popup) {
 	  }
@@ -34,10 +33,10 @@ public class ResearchServicesSteps extends Setup {
 	}
 	@Then("^user enter name on rs form$")
 	public void user_enter_name_on_rs_form()  throws Throwable {
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 		try {
 		driver.findElement(By.id("name")).sendKeys("SlideTeam Testing");
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 	} catch (NoSuchElementException popup) {
 	  }
 		
@@ -45,10 +44,10 @@ public class ResearchServicesSteps extends Setup {
 
 	@Then("^user enter email on rs form$")
 	public void user_enter_email_on_rs_form() throws Throwable {
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 		try {
 		driver.findElement(By.id("form_email")).sendKeys("slidetech.qa@gmail.com");
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 	} catch (NoSuchElementException popup) {
 	  }
 		
@@ -56,10 +55,10 @@ public class ResearchServicesSteps extends Setup {
 
 	@Then("^user enter mobile number on rs form$")
 	public void user_enter_mobile_number_on_rs_form()throws Throwable  {
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 		try {
 		driver.findElement(By.id("telephone")).sendKeys("5678912345");
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 	} catch  (NoSuchElementException popup) {
 	  }
 		
@@ -67,7 +66,7 @@ public class ResearchServicesSteps extends Setup {
 
 	@Then("^user enter comment on rs form$")
 	public void user_enter_comment_on_rs_form()  throws Throwable{
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 		try {
 		//driver.findElement(By.id("comment")).sendKeys("This is a text message for QA purposes sent by an automated program. Please ignore.");
 		SimpleDateFormat formatter= new SimpleDateFormat("dd-MM-yyyy 'at' HH:mm:ss z"); 
@@ -77,7 +76,7 @@ public class ResearchServicesSteps extends Setup {
 		driver.findElement(By.id("comment")).sendKeys("This is a text message for QA purposes sent by an automated program. Please ignore."+ "\n"+
 								"Page URL is:-> https://www.slideteam.net/powerpoint_presentation_design_services"+"\n"+ 
 								"Current Time is:->"+message_write_time);	
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 	} catch (NoSuchElementException popup) {
 	  }
 		
@@ -85,10 +84,10 @@ public class ResearchServicesSteps extends Setup {
 
 	@Then("^user enter captcha on rs form$")
 	public void user_enter_captcha_on_rs_form() throws Throwable {
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 		try {
 		driver.findElement(By.id("captcha_business_research_services_captcha")).sendKeys("Aj7W2mtf9namwf55");
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 	} catch (NoSuchElementException popup) {
 	  }
 		
@@ -97,10 +96,10 @@ public class ResearchServicesSteps extends Setup {
 	@Then("^user click on submit button on rs form$")
 	public void user_click_on_submit_button_on_rs_form() throws Throwable {
 		
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 		try {
 		driver.findElement(By.id("finalSubmit")).submit();
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 		
 	} catch (NoSuchElementException popup) {
 	  }
