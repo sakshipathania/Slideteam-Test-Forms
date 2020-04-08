@@ -24,8 +24,8 @@ public class BlogComment extends Setup {
 	
 	WebDriverWait wait = new WebDriverWait(driver,50);
          
-	@Given("^user is already on sign in page epu$")
-        public void user_is_already_on_sign_in_page_epu() throws Throwable  {
+	@Given("^user is already on sign in page$")
+        public void user_is_already_on_sign_in_page() throws InterruptedException  {
     
 	driver.get(AppURL);
 	driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
@@ -46,8 +46,8 @@ public class BlogComment extends Setup {
 	}
       }
 
-         @Then("^user enter email and password epu$")
-         public void user_enter_email_and_password_epu() throws Throwable  {
+         @Then("^user enter email and password $")
+         public void user_enter_email_and_password() throws InterruptedException  {
     
 	WebElement old_paid_email = wait.until(ExpectedConditions.elementToBeClickable(By.id("email")));
         old_paid_email.sendKeys("Sakshi.pathania@slidetech.in");
@@ -56,17 +56,20 @@ public class BlogComment extends Setup {
         old_paid_pass.sendKeys("Sakshi@456");
         }
 
-         @Then("^user click on login button epu$")
-         public void user_click_on_login_button_epu() throws Throwable  {
+         @Then("^user click on login button $")
+         public void user_click_on_login_button() throws InterruptedException  {
    
 	 WebElement old_paid_login_btn=wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button.login > span:nth-child(1)")));
 	    old_paid_login_btn.click();
            }
-
+	
+	
         @Then("^user is on blog page$")
 	public void user_is_on_blog_page() throws Throwable {
 		Thread.sleep(1000);
-		driver.get("https://www.slideteam.net/blog/");
+		webElement Blog = wait.until(ExcpectedConditions.elementToBeClickable(By.xpath("/html/body/div[2]/header/div[1]/div[2]/div/nav/div/div/ul/li[6]/a")));
+		driver.get("https://www.slideteam.net/Blog");
+		Blog.click();
 		Thread.sleep(1000);
 	}
 	
@@ -75,14 +78,16 @@ public class BlogComment extends Setup {
 		Thread.sleep(2000);
 		driver.get("https://www.slideteam.net/blog/using-images-in-presentations-11-dos-and-donts/");
 		Thread.sleep(3000);
-		  // driver.manage().deleteAllCookies();
+		  driver.manage().deleteAllCookies();
 		   Thread.sleep(2000);
 	}
 	
 	@Then("^user close the coupon popup$")
 	public void user_close_the_coupon_popup() throws Throwable {
 		Thread.sleep(2000);
+		WebElement Popup = wait.Until(ExpectedConditions.ElementIsVisible(By.xpath("//*[@id='blog-detail-popup']/div/div/div[1]/button/span")));
 		driver.findElement(By.xpath("//*[@id='blog-detail-popup']/div/div/div[1]/button/span")).click();
+		Popup.close();
 		Thread.sleep(1000);
 	}
 
@@ -101,7 +106,7 @@ public class BlogComment extends Setup {
 	}
 	
 	@Then("^user enter comment on blog form$")
-	public void user_enter_comment_on_blog_form()throws Throwable {
+	public void user_enter_comment_on_blog_form() throws Throwable {
 		Thread.sleep(1000);
 		SimpleDateFormat formatter= new SimpleDateFormat("dd-MM-yyyy 'at' HH:mm:ss z"); 
 	    Date date = new Date(System.currentTimeMillis());  
