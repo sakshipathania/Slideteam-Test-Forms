@@ -16,6 +16,7 @@ import cucumber.api.java.en.Then;
 
 public class ResearchServicesSteps extends Setup {
 
+	 WebDriverWait wait = new WebDriverWait(driver,50);
 	
 	@Given("^user is already on Submit Your Business Research Requirements form$")
 	public void user_is_already_on_Submit_Your_Business_Research_Requirements_form() throws Throwable  {
@@ -29,7 +30,7 @@ public class ResearchServicesSteps extends Setup {
 		Thread.sleep(2000);
 		
 	@Then("^user enter name on rs form$")
-	public void user_enter_name_on_rs_form()  throws Throwable{
+	public void user_enter_name_on_rs_form()  throws Throwable {
 		Thread.sleep(1000);
 		driver.findElement(By.id("name")).sendKeys("SlideTeam Testing");
 		Thread.sleep(1000);
