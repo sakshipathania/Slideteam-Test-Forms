@@ -22,7 +22,7 @@ public class ResearchServicesSteps extends Setup {
 	
 		Thread.sleep(3000);
 		try {
-		WebElement Submit = driver.findElement(By.cssSelector("div.links:nth-child(6) > ul:nth-child(2) > li:nth-child(10) > a:nth-child(1)"));
+		driver.findElement(By.cssSelector("div.links:nth-child(6) > ul:nth-child(2) > li:nth-child(10) > a:nth-child(1)"));
 		
 		//*Submit.click();
 			Thread.sleep(3000);	
