@@ -22,8 +22,11 @@ public class ResearchServicesSteps extends Setup {
 	
 		Thread.sleep(3000);
 		try {
-		driver.findElement(By.cssSelector("div.links:nth-child(6) > ul:nth-child(2) > li:nth-child(10) > a:nth-child(1)")).click();
-		Thread.sleep(2000);	
+		WebElement Submit = driver.findElement(By.cssSelector("div.links:nth-child(6) > ul:nth-child(2) > li:nth-child(10) > a:nth-child(1)")).click();
+		
+			JavascriptExecutor executor = (JavascriptExecutor)driver;
+                        executor.executeScript(“arguments[0].click();”, Submit);
+			Thread.sleep(2000);	
 	 }
           catch (NoSuchElementException popup) {
 	  }
