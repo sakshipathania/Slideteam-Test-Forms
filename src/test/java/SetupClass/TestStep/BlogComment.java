@@ -52,6 +52,19 @@ public class BlogComment extends Setup {
 		
 	}
 	
+	
+	@Then("^user close the coupon popup$")
+        public void user_close_the_coupon_popup() throws Throwable {
+        
+         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+    
+        
+        driver.findElement(By.xpath("//*[@id='blog-detail-popup']/div/div/div[1]/button/span"));
+        Alert confirmBox = (Alert) driver.switchTo().alert();  
+         ((Alert) confirmBox).dismiss();
+        Thread.sleep(1000);
+        }
+	
 	@Then("^user enter captcha on blog form$")
 	public void user_enter_captcha_on_blog_form() throws Throwable {
 		
