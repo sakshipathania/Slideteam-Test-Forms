@@ -36,6 +36,7 @@ public class BlogComment extends Setup {
 		Thread.sleep(3000);
 		driver.manage().deleteAllCookies();
 		   Thread.sleep(2000);
+		$.magnificPopup.close();
 	}
 			    			    
 	@Then("^user enter comment on blog form$")
@@ -49,9 +50,6 @@ public class BlogComment extends Setup {
 								"Page URL is:-> https://www.slideteam.net/blog/using-these-smart-goals-can-increase-your-impact-as-a-marketer/"+"\n"+ ""+""+
 								"Current Time is:->"+message_write_time);		
 		Thread.sleep(1000);
-		$('#close').on( "click", function() {
-                $.magnificPopup.close();
-                });
 
 	}
 	
