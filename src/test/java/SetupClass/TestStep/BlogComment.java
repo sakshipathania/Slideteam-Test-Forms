@@ -56,9 +56,9 @@ public class BlogComment extends Setup {
 	@Then("^user close the coupon popup$")
         public void user_close_the_coupon_popup() throws Throwable {
         
-         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+         Thread.sleep(1000);
    
-        driver.findElement(By.xpath("//*[@id='blog-detail-popup']/div/div/div[1]/button/span"));
+        //* driver.findElement(By.xpath("//*[@id='blog-detail-popup']/div/div/div[1]/button/span"));
         jQuery('#blog-detail-popup').magnificPopup('close');
         Thread.sleep(1000);
         }
