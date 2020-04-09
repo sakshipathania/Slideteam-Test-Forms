@@ -58,7 +58,7 @@ public class BlogComment extends Setup {
         
          Thread.sleep(1000);
    
-        driver.findElement(By.xpath("//*[@id='blog-detail-popup']")).magnificPopup('close');
+        driver.findElement(By.xpath("//*[@id='blog-detail-popup'].magnificPopup('close')"));
 	       
        // $("#blog-detail-popup").magnificPopup('close');
 
