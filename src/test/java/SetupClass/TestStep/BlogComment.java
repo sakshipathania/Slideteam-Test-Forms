@@ -36,10 +36,15 @@ public class BlogComment extends Setup {
 		Thread.sleep(3000);
 		driver.manage().deleteAllCookies();
 		   Thread.sleep(2000);
-	          driver.findElement(By.cssSelector("#blog-detail-popup > div > div > div.modal-header > button")).click();
-		Thread.sleep(1000);
-		
+	          
 	}
+	
+	@Then("^user close the coupon popup$")
+    public void user_close_the_coupon_popup() throws Throwable {
+        
+        driver.findElement(By.cssSelector("#blog-detail-popup > div > div > div.modal-header > button")).click();
+		Thread.sleep(1000);
+    }
 			    			    
 	@Then("^user enter comment on blog form$")
 	public void user_enter_comment_on_blog_form() throws Throwable {
