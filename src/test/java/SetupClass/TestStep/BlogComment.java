@@ -58,10 +58,8 @@ public class BlogComment extends Setup {
         
          Thread.sleep(1000);
    
-        driver.findElement(By.xpath("//*[@id='blog-detail-popup']/div/div/div[1]/button"));
-	var magnificPopup = $.magnificPopup.instance; 
-        // save instance in magnificPopup variable
-         magnificPopup.close(); 
+        driver.findElement(By.xpath("//*[@id='blog-detail-popup']/div/div/div[1]/button")).magnificPopup('close');
+	       
        // $("#blog-detail-popup").magnificPopup('close');
 
         //* jQuery('#blog-detail-popup')
