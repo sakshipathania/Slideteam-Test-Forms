@@ -36,6 +36,7 @@ public class BlogComment extends Setup {
 		Thread.sleep(3000);
 		driver.manage().deleteAllCookies();
 		   Thread.sleep(2000);
+		driver.get("//*[@id='blog-detail-popup']");
 		magnificPopup.close();
 	}
 			    			    
