@@ -36,7 +36,7 @@ public class BlogComment extends Setup {
 		Thread.sleep(3000);
 		driver.manage().deleteAllCookies();
 		   Thread.sleep(2000);
-	          driver.findElement(By.cssSelector("#blog-detail-popup > div > div > div.modal-header > button")).close();
+	          driver.findElement(By.cssSelector("#blog-detail-popup > div > div > div.modal-header > button")).click();
 		Thread.sleep(1000);
 		
 	}
