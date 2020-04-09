@@ -36,7 +36,7 @@ public class BlogComment extends Setup {
 		Thread.sleep(3000);
 		driver.manage().deleteAllCookies();
 		   Thread.sleep(2000);
-		$.magnificPopup.close();
+		magnificPopup.close();
 	}
 			    			    
 	@Then("^user enter comment on blog form$")
