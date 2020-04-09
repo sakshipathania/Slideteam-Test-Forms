@@ -49,22 +49,12 @@ public class BlogComment extends Setup {
 								"Page URL is:-> https://www.slideteam.net/blog/using-these-smart-goals-can-increase-your-impact-as-a-marketer/"+"\n"+ ""+""+
 								"Current Time is:->"+message_write_time);		
 		Thread.sleep(1000);
-		
+		$('#close').on( "click", function() {
+                $.magnificPopup.close();
+                });
+
 	}
 	
-	
-	@Then("^user close the coupon popup$")
-        public void user_close_the_coupon_popup() throws Throwable {
-        
-         Thread.sleep(1000);
-   
-        driver.findElement(By.xpath("//*[@id='blog-detail-popup'].magnificPopup('close')"));
-	       
-       // $("#blog-detail-popup").magnificPopup('close');
-
-        //* jQuery('#blog-detail-popup')
-        Thread.sleep(1000);
-        }
 	
 	@Then("^user enter captcha on blog form$")
 	public void user_enter_captcha_on_blog_form() throws Throwable {
