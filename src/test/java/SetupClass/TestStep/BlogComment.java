@@ -7,7 +7,7 @@ import java.sql.Date;
 import java.sql.Driver;
 import java.text.SimpleDateFormat;
 import java.util.concurrent.TimeUnit;
-import "magnific-popup";
+
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -36,8 +36,9 @@ public class BlogComment extends Setup {
 		Thread.sleep(3000);
 		driver.manage().deleteAllCookies();
 		   Thread.sleep(2000);
-	          driver.get("//*[@id='blog-detail-popup']");
-		magnificPopup.close();
+	          driver.findElement(By.cssSelector("#blog-detail-popup > div > div > div.modal-header > button")).close();
+		Thread.sleep(1000);
+		
 	}
 			    			    
 	@Then("^user enter comment on blog form$")
