@@ -50,12 +50,12 @@ public class BlogComment extends Setup {
 	    Thread.sleep(10000);
         // driver.findElement(By.cssSelector("#blog-detail-popup > div > div > div.modal-header > button")).click();
 	    
-		Thread.sleep(4000);
+		Thread.sleep(8000);
     } 
 			    			    
 	@Then("^user enter comment on blog form$")
 	public void user_enter_comment_on_blog_form() throws Throwable {
-		Thread.sleep(1000);
+		Thread.sleep(8000);
 		SimpleDateFormat formatter= new SimpleDateFormat("dd-MM-yyyy 'at' HH:mm:ss z"); 
 	    Date date = new Date(System.currentTimeMillis());  
 	    message_write_time=formatter.format(date);
@@ -63,7 +63,7 @@ public class BlogComment extends Setup {
 		driver.findElement(By.id("comment")).sendKeys("This is a text message for QA purposes sent by an automated program. Please ignore."+ "\n"+ ""+""+
 								"Page URL is:-> https://www.slideteam.net/blog/using-these-smart-goals-can-increase-your-impact-as-a-marketer/"+"\n"+ ""+""+
 								"Current Time is:->"+message_write_time);		
-		Thread.sleep(1000);
+		Thread.sleep(8000);
 
 	}
 	
@@ -72,9 +72,9 @@ public class BlogComment extends Setup {
 	public void user_enter_captcha_on_blog_form() throws Throwable {
 		
 		WebElement blog_captcha = wait.until(ExpectedConditions.elementToBeClickable(By.id("captcha_blog_captcha_form")));
-	    Thread.sleep(2000);
+	    Thread.sleep(8000);
 	    blog_captcha.sendKeys("Aj7W2mtf9namwf55");
-	    Thread.sleep(3000);
+	    Thread.sleep(8000);
    
 	}
 
