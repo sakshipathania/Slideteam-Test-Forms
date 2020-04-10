@@ -42,7 +42,7 @@ public class BlogComment extends Setup {
 	          
 	}
 	@Then("Pop up is going ready to be closed$")
-	 public void test () throws InterruptedException 
+	 public void Pop_up_is_going_ready_to_be_closed() throws InterruptedException 
         {  
   //Generating Alert Using Javascript Executor
         JavascriptExecutor javascript = (JavascriptExecutor) driver;
@@ -63,7 +63,7 @@ public class BlogComment extends Setup {
           } 
 	
 	@Then("Pop up is closed$")
-	 public void test () throws InterruptedException 
+	 public void Pop_up_is_closed() throws InterruptedException 
         {  
   //Generating Alert Using Javascript Executor
         JavascriptExecutor javascript = (JavascriptExecutor) driver;
