@@ -44,6 +44,7 @@ public class BlogComment extends Setup {
 	
 	 @Then("^user close the coupon popup$")
     public void user_close_the_coupon_popup() throws Throwable {
+	    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	    
 	    js=(JavascriptExecutor)driver;
             js.executeScript("jQuery('#blog-detail-popup').magnificPopup('close')");
@@ -55,7 +56,7 @@ public class BlogComment extends Setup {
 			    			    
 	@Then("^user enter comment on blog form$")
 	public void user_enter_comment_on_blog_form() throws Throwable {
-		Thread.sleep(8000);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		SimpleDateFormat formatter= new SimpleDateFormat("dd-MM-yyyy 'at' HH:mm:ss z"); 
 	    Date date = new Date(System.currentTimeMillis());  
 	    message_write_time=formatter.format(date);
@@ -70,10 +71,10 @@ public class BlogComment extends Setup {
 	
 	@Then("^user enter captcha on blog form$")
 	public void user_enter_captcha_on_blog_form() throws Throwable {
-		
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		WebElement blog_captcha = wait.until(ExpectedConditions.elementToBeClickable(By.id("captcha_blog_captcha_form")));
 	    Thread.sleep(8000);
-	    blog_captcha.sendKeys("Aj7W2mtf9namwf55");
+	    blog_captcha.sendKeys("885");
 	    Thread.sleep(8000);
    
 	}
