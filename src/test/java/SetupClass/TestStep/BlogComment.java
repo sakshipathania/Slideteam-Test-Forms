@@ -34,7 +34,7 @@ public class BlogComment extends Setup {
 		
          driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	
-		Thread.sleep(2000);
+		Thread.sleep(2000); 
 		driver.get("https://www.slideteam.net/blog/using-images-in-presentations-11-dos-and-donts/");
 		Thread.sleep(3000);
 		driver.manage().deleteAllCookies();
