@@ -26,7 +26,8 @@ import cucumber.api.java.en.Then;
 public class BlogComment extends Setup {
 	
 	WebDriverWait wait = new WebDriverWait(driver,50);
-	javascriptExecutor js;
+	JavascriptExecutor js;
+	
 	
 	@Given("^user is already on blog form$")
 	public void user_is_already_on_blog_form() throws Throwable {
@@ -43,10 +44,11 @@ public class BlogComment extends Setup {
 	
 	 @Then("^user close the coupon popup$")
     public void user_close_the_coupon_popup() throws Throwable {
-	    enablejQuery();
+	    
+	    js=(JavascriptExecutor)driver;
             js.executeScript("jQuery('#blog-detail-popup').magnificPopup('close')");
 	    Thread.sleep(10000);
-        driver.findElement(By.cssSelector("#blog-detail-popup > div > div > div.modal-header > button")).click();
+        // driver.findElement(By.cssSelector("#blog-detail-popup > div > div > div.modal-header > button")).click();
 	    
 		Thread.sleep(4000);
     } 
