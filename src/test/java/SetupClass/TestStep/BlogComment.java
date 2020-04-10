@@ -70,7 +70,8 @@ public class BlogComment extends Setup {
         javascript.executeScript("alert('Pop up is closed now..');");
         Thread.sleep(2000);
         driver.switchTo().alert().accept();
-			    
+	 }
+	
 	@Then("^user enter comment on blog form$")
 	public void user_enter_comment_on_blog_form() throws Throwable {
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
