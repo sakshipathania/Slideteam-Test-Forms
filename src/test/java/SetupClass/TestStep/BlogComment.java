@@ -35,13 +35,14 @@ public class BlogComment extends Setup {
 		driver.get("https://www.slideteam.net/blog/using-images-in-presentations-11-dos-and-donts/");
 		Thread.sleep(3000);
 		driver.manage().deleteAllCookies();
-		   Thread.sleep(9000);
+		   Thread.sleep(4000);
 	          
 	}
 	
 	 @Then("^user close the coupon popup$")
     public void user_close_the_coupon_popup() throws Throwable {
         
+	    Thread.sleep(10000);
         driver.findElement(By.cssSelector("#blog-detail-popup > div > div > div.modal-header > button")).click();
 		Thread.sleep(4000);
     } 
