@@ -16,6 +16,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.remote.DesiredCapabilities;  
 import org.openqa.selenium.Alert; 
+import org.openqa.selenium.JavascriptExecutor;
 
 import SetupClass.Setup;
 import cucumber.api.java.en.Given;
@@ -25,6 +26,7 @@ import cucumber.api.java.en.Then;
 public class BlogComment extends Setup {
 	
 	WebDriverWait wait = new WebDriverWait(driver,50);
+	javascriptExecutor js;
 	
 	@Given("^user is already on blog form$")
 	public void user_is_already_on_blog_form() throws Throwable {
@@ -41,9 +43,11 @@ public class BlogComment extends Setup {
 	
 	 @Then("^user close the coupon popup$")
     public void user_close_the_coupon_popup() throws Throwable {
-        
+	    enablejQuery();
+            js.executeScript("jQuery('#blog-detail-popup').magnificPopup('close')");
 	    Thread.sleep(10000);
         driver.findElement(By.cssSelector("#blog-detail-popup > div > div > div.modal-header > button")).click();
+	    
 		Thread.sleep(4000);
     } 
 			    			    
