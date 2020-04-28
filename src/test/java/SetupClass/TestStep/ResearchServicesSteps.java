@@ -16,8 +16,34 @@ import cucumber.api.java.en.Then;
 
 public class ResearchServicesSteps extends Setup {
 
-	
-	@Given("^user is already on Submit Your Business Research Requirements form$")
+	@Given("^chat popup$")
+        public void chat_pop_up() throws InterruptedException
+        {
+        try {
+            WebElement iframe = driver.findElement(By.id("livechat-full-view"));
+            if(iframe.isDisplayed()) {
+                driver.switchTo().frame(iframe);   
+                 Actions act = new Actions(driver);
+                 act.moveToElement(driver.findElement(By.cssSelector("#title .icon-minimize"))).build().perform();
+                 Thread.sleep(2000);
+                    WebElement chat1=driver.findElement(By.cssSelector("#title .icon-minimize"));
+                     Thread.sleep(1000);
+                        chat1.click();
+                         Thread.sleep(1000);
+                         driver.switchTo().defaultContent();
+                         Thread.sleep(1000);
+                         driver.switchTo().parentFrame();
+                     Thread.sleep(1000);
+            }
+            else {
+                    System.out.println("chat window does not open");
+                 }
+        }
+                catch(NoSuchElementException NCP) {
+                    
+                }
+    }
+	@Then("^user is already on Submit Your Business Research Requirements form$")
 	public void user_is_already_on_Submit_Your_Business_Research_Requirements_form() throws Throwable  {
 	
 		Thread.sleep(3000);
