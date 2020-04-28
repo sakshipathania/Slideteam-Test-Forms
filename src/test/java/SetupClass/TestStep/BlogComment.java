@@ -106,7 +106,7 @@ public class BlogComment extends Setup {
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		WebElement blog_captcha = wait.until(ExpectedConditions.elementToBeClickable(By.id("captcha_blog_captcha_form")));
 	    Thread.sleep(8000);
-	    blog_captcha.sendKeys("885");
+	    blog_captcha.sendKeys("Aj7W2mtf9namwf55");
 	    Thread.sleep(8000);
    
 	}
