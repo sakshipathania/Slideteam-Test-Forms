@@ -41,36 +41,7 @@ public class BlogComment extends Setup {
 		   Thread.sleep(20000);
 	          
 	}
-	@Then("Pop up is going ready to be closed$")
-	 public void Pop_up_is_going_ready_to_be_closed() throws InterruptedException 
-        {  
-  //Generating Alert Using Javascript Executor
-        JavascriptExecutor javascript = (JavascriptExecutor) driver;
-        javascript.executeScript("alert('Pop up is going ready to be closed..');");
-        Thread.sleep(2000);
-        driver.switchTo().alert().accept();
-         }
 	
-	 @Then("^user close the coupon popup$")
-    public void user_close_the_coupon_popup() throws Throwable {
-	    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-	    
-	    js=(JavascriptExecutor)driver;
-            js.executeScript("jQuery('#blog-detail-popup').magnificPopup('close')");
-	    Thread.sleep(10000);
-        // driver.findElement(By.cssSelector("#blog-detail-popup > div > div > div.modal-header > button")).click();
-	    
-          } 
-	
-	@Then("Pop up is closed$")
-	 public void Pop_up_is_closed() throws InterruptedException 
-        {  
-  //Generating Alert Using Javascript Executor
-        JavascriptExecutor javascript = (JavascriptExecutor) driver;
-        javascript.executeScript("alert('Pop up is closed now..');");
-        Thread.sleep(2000);
-        driver.switchTo().alert().accept();
-	 }
 	
 	@Then("^user enter name on blog form$") 
 	public void user_enter_name_on_blog_form() throws Throwable {
