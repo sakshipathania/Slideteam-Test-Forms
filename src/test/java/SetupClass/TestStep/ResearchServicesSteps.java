@@ -50,7 +50,8 @@ public class ResearchServicesSteps extends Setup {
 	
 		Thread.sleep(3000);
 		try {
-		driver.findElement(By.cssSelector("div.links:nth-child(6) > ul:nth-child(2) > li:nth-child(10) > a:nth-child(1)"));
+			driver.get("https://www.slideteam.net/powerpoint_presentation_design_services/business_research_services");
+		//driver.findElement(By.cssSelector("div.links:nth-child(6) > ul:nth-child(2) > li:nth-child(10) > a:nth-child(1)"));
 		
 		//*Submit.click();
 			Thread.sleep(3000);	
