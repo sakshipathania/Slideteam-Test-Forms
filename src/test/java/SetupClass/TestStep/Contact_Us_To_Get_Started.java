@@ -64,8 +64,10 @@ public class Contact_Us_To_Get_Started extends Setup {
 	@Then("^user enter name on gs form$")
 	public void user_enter_name_on_gs_form() throws Throwable {
 		Thread.sleep(1000);
-		WebElement Name= driver.findElement(By.xpath("//*[@id='name']")).sendKeys("SlideTeam Testing");
+		WebElement Name= driver.findElement(By.xpath("//*[@id='name']"));
 		js.executeScript("arguments[0].scrollIntoView();",Name);
+		Thread.sleep(1000);
+		Name.sendKeys("SlideTeam Testing");
 		Thread.sleep(1000);
 	}
 
