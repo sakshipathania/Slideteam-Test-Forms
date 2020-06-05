@@ -24,20 +24,70 @@ public class Contact_Us_To_Get_Started extends Setup {
 	WebDriverWait wait = new WebDriverWait(driver,50);
 	JavascriptExecutor js = (JavascriptExecutor) driver;
 	
+	
+	public void clear_cache() throws InterruptedException
+	{
+		driver.manage().deleteAllCookies();
+		Thread.sleep(4200);
+		log.info("DELETE COOKIES");
+	}
+	public void err_page() throws InterruptedException
+	{
+		
+		pagetitle=driver.getTitle().toUpperCase();
+		System.out.println("Title of the Page is:-"+""+pagetitle);
+		Thread.sleep(3500);
+		
+		try
+		{
+			driver.getPageSource().contains("404 Not Found");
+		}
+	    catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+	
+	public void chat_pop_up() throws InterruptedException
+	{
+		try {
+			WebElement iframe = driver.findElement(By.id("livechat-full-view"));
+			if(iframe.isDisplayed()) {
+				driver.switchTo().frame(iframe);   
+				 Actions act = new Actions(driver);
+				 act.moveToElement(driver.findElement(By.cssSelector("#title .icon-minimize"))).build().perform();
+				 Thread.sleep(2000);
+					WebElement chat1=driver.findElement(By.cssSelector("#title .icon-minimize"));
+					 Thread.sleep(1000);
+						chat1.click();
+						 Thread.sleep(1000);
+						 driver.switchTo().defaultContent();
+						 Thread.sleep(1000);
+						 driver.switchTo().parentFrame();
+					 Thread.sleep(1000);
+			}
+			else {
+					System.out.println("chat window does not open");
+			     }
+		}
+				catch(NoSuchElementException NCP) {
+					
+				}
+	}
+	
 	@Given("^user is already on contact us to get started form$")
 	public void user_is_already_on_contact_us_to_get_started_form()  throws Throwable{
 		Thread.sleep(1000);
 		driver.get("https://www.slideteam.net/powerpoint_presentation_design_services/hire-a-designer");
 		Thread.sleep(1000);
 		WebElement contact_us_footer= wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@title=' Contact Us'][contains(.,'Contact Us')]")));
-		//clear_cache();
+		clear_cache();
 		Thread.sleep(3000);
 		js.executeScript("arguments[0].scrollIntoView();",contact_us_footer);
 		contact_us_footer.click();
 		log.info("FOOTER --> CONTACT US");
 		Thread.sleep(3000);
-		//chat_pop_up();
-		//err_page();
+		chat_pop_up();
+		err_page();
 	}
 
 	@Then("^user enter name on gs form$")
