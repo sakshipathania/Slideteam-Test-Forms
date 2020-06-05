@@ -9,6 +9,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.JavascriptExecutor;
 
 import org.apache.commons.collections.SetUtils;
 import org.openqa.selenium.By;
@@ -28,7 +30,7 @@ public class Contact_Us_To_Get_Started extends Setup {
 		driver.get("https://www.slideteam.net/powerpoint_presentation_design_services/hire-a-designer");
 		Thread.sleep(1000);
 		WebElement contact_us_footer= wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@title=' Contact Us'][contains(.,'Contact Us')]")));
-		clear_cache();
+		//clear_cache();
 		Thread.sleep(3000);
 		js.executeScript("arguments[0].scrollIntoView();",contact_us_footer);
 		contact_us_footer.click();
