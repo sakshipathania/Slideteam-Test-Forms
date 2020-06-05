@@ -7,6 +7,7 @@ import java.sql.Date;
 import java.text.SimpleDateFormat;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.NoSuchElementException;
 
 import org.apache.commons.collections.SetUtils;
@@ -17,6 +18,9 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 
 public class Contact_Us_To_Get_Started extends Setup {
+	
+	WebDriverWait wait = new WebDriverWait(driver,50);
+	JavascriptExecutor js = (JavascriptExecutor) driver;
 	
 	@Given("^user is already on contact us to get started form$")
 	public void user_is_already_on_contact_us_to_get_started_form()  throws Throwable{
@@ -30,8 +34,8 @@ public class Contact_Us_To_Get_Started extends Setup {
 		contact_us_footer.click();
 		log.info("FOOTER --> CONTACT US");
 		Thread.sleep(3000);
-		chat_pop_up();
-		err_page();
+		//chat_pop_up();
+		//err_page();
 	}
 
 	@Then("^user enter name on gs form$")
