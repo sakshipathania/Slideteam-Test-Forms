@@ -18,6 +18,7 @@ import org.openqa.selenium.By;
 import SetupClass.Setup;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
+import gherkin.lexer.Th;
 
 public class Contact_Us_To_Get_Started extends Setup {
 	
@@ -31,10 +32,10 @@ public class Contact_Us_To_Get_Started extends Setup {
 		Thread.sleep(4200);
 		log.info("DELETE COOKIES");
 	}
-	public void err_page() throws InterruptedException
+	/*public void err_page() throws InterruptedException
 	{
 		
-		pagetitle=driver.getTitle().toUpperCase();
+		pagetitle = driver.getTitle().toUpperCase();
 		System.out.println("Title of the Page is:-"+""+pagetitle);
 		Thread.sleep(3500);
 		
@@ -45,7 +46,7 @@ public class Contact_Us_To_Get_Started extends Setup {
 	    catch (Exception e) {
 			// TODO: handle exception
 		}
-	}
+	}*/
 	
 	public void chat_pop_up() throws InterruptedException
 	{
@@ -87,7 +88,7 @@ public class Contact_Us_To_Get_Started extends Setup {
 		log.info("FOOTER --> CONTACT US");
 		Thread.sleep(3000);
 		chat_pop_up();
-		err_page();
+		//err_page();
 	}
 
 	@Then("^user enter name on gs form$")
