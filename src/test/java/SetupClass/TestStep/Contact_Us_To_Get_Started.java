@@ -25,29 +25,7 @@ public class Contact_Us_To_Get_Started extends Setup {
 	WebDriverWait wait = new WebDriverWait(driver,50);
 	JavascriptExecutor js = (JavascriptExecutor) driver;
 	
-	
-	public void clear_cache() throws InterruptedException
-	{
-		driver.manage().deleteAllCookies();
-		Thread.sleep(4200);
-		log.info("DELETE COOKIES");
-	}
-	/*public void err_page() throws InterruptedException
-	{
-		
-		pagetitle = driver.getTitle().toUpperCase();
-		System.out.println("Title of the Page is:-"+""+pagetitle);
-		Thread.sleep(3500);
-		
-		try
-		{
-			driver.getPageSource().contains("404 Not Found");
-		}
-	    catch (Exception e) {
-			// TODO: handle exception
-		}
-	}*/
-	
+
 	public void chat_pop_up() throws InterruptedException
 	{
 		try {
@@ -79,36 +57,29 @@ public class Contact_Us_To_Get_Started extends Setup {
 	public void user_is_already_on_contact_us_to_get_started_form()  throws Throwable{
 		Thread.sleep(1000);
 		driver.get("https://www.slideteam.net/powerpoint_presentation_design_services/hire-a-designer");
-		Thread.sleep(1000);
-		WebElement contact_us_footer= wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@title=' Contact Us'][contains(.,'Contact Us')]")));
-		clear_cache();
-		Thread.sleep(3000);
-		js.executeScript("arguments[0].scrollIntoView();",contact_us_footer);
-		contact_us_footer.click();
-		log.info("FOOTER --> CONTACT US");
-		Thread.sleep(3000);
-		chat_pop_up();
-		//err_page();
+		Thread.sleep(4000);
+		
 	}
 
 	@Then("^user enter name on gs form$")
 	public void user_enter_name_on_gs_form() throws Throwable {
 		Thread.sleep(1000);
-		driver.findElement(By.id("name")).sendKeys("SlideTeam Testing");
+		WebElement Name= driver.findElement(By.xpath("//*[@id='name']")).sendKeys("SlideTeam Testing");
+		js.executeScript("arguments[0].scrollIntoView();",Name);
 		Thread.sleep(1000);
 	}
 
 	@Then("^user enter email on gs form$")
 	public void user_enter_email_on_gs_form() throws Throwable {
 		Thread.sleep(1000);
-		driver.findElement(By.id("email")).sendKeys("slidetech.qa@gmail.com");
+		driver.findElement(By.xpath("//*[@id='email']")).sendKeys("slidetech.qa@gmail.com");
 		Thread.sleep(1000);
 	}
 
 	@Then("^user enter phone number on gs form$")
 	public void user_enter_phone_number_on_gs_form() throws Throwable {
 		Thread.sleep(1000);
-		driver.findElement(By.id("telephone")).sendKeys("8295782957");
+		driver.findElement(By.xpath("//*[@id='telephone']")).sendKeys("8295782957");
 		Thread.sleep(1000);
 	    
 	}
@@ -121,7 +92,7 @@ public class Contact_Us_To_Get_Started extends Setup {
 	    Date date = new Date(System.currentTimeMillis());  
 	    message_write_time=formatter.format(date);
 	    System.out.println(Button_Click_Time);  
-		driver.findElement(By.id("comment")).sendKeys("This is a text message for QA purposes sent by an automated program. Please ignore."+ "\n"+""+""+
+		driver.findElement(By.xpath("//*[@id='comment']")).sendKeys("This is a text message for QA purposes sent by an automated program. Please ignore."+ "\n"+""+""+
 								"Page URL is:-> https://www.slideteam.net/contacts"+"\n"+""+""+ 
 								"Current Time is:->"+message_write_time);		
 		Thread.sleep(1000);
