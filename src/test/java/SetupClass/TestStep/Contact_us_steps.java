@@ -7,6 +7,7 @@ import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.JavascriptExecutor;
 
 import org.openqa.selenium.By;
 
@@ -17,6 +18,7 @@ import cucumber.api.java.en.Then;
 public class Contact_us_steps extends Setup {
 	
 	// contact us form
+	JavascriptExecutor js = (JavascriptExecutor) driver;
 	
 	@Given("^user is already on contact us form$")
 	public void user_is_already_on_contact_us_form()  throws Throwable {
