@@ -23,7 +23,10 @@ public class Contact_us_steps extends Setup {
 		driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
 		log.info("It's opening the website URL");
 		Thread.sleep(1000);
-		driver.findElement(By.cssSelector("div.links:nth-child(6) > ul:nth-child(2) > li:nth-child(4) > a:nth-child(1)")).click();
+		WebElement Contact_us= driver.findElement(By.cssSelector("div.links:nth-child(6) > ul:nth-child(2) > li:nth-child(4) > a:nth-child(1)"));
+		js.executeScript("arguments[0].scrollIntoView();",Contact_us);
+		Thread.sleep(1000);
+		Contact_us.click();
 		Thread.sleep(1000);
 	}
 
