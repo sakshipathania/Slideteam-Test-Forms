@@ -70,7 +70,7 @@ public class Questionnaire extends Setup {
 	@Then("^User click on Upload button")
 	public void User_click_on_Upload_button() throws Throwable {
 		Thread.sleep(1000);
-		WebElement uploadElement= driver.findElement(By.cssSelector("#ajax-upload-id-1592220297109")).click();
+		driver.findElement(By.xpath("//*[@id='ajax-upload-id-1592223224587']")).click();
 		Thread.sleep(1000);
 		//uploadElement.sendKeys("C:/Users/Administrator/Downloads");
 		//Thread.sleep(2000);
