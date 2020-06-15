@@ -66,6 +66,15 @@ public class Questionnaire extends Setup {
 								"Current Time is:->"+message_write_time);	
 		Thread.sleep(1000);
 	}
+	
+	@Then("^User click on Upload button")
+	public void User_click_on_Upload_button() throws Throwable {
+		Thread.sleep(1000);
+		WebElement uploadElement= driver.findElement(By.cssSelector("#ajax-upload-id-1592220297109")).click();
+		Thread.sleep(1000);
+		uploadElement.sendKeys("C:\Users\Administrator\Downloads");
+		Thread.sleep(2000);
+	}
 
 	@Then("^user click on submit on questionnaire form$")
 	public void user_click_on_submit_on_questionnaire_form() throws Throwable {
