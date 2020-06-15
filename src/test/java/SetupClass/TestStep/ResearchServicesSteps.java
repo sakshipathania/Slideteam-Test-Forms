@@ -126,6 +126,7 @@ public class ResearchServicesSteps extends Setup {
 	public void user_click_on_submit_button_on_rs_form() throws Throwable {
 		
 		Thread.sleep(3000);
+		driver.findElement(By.xpath("//*[@id='mulitplefileuploader']/div[1]/div/label/span")).click();
 		try {
 		driver.findElement(By.id("finalSubmit")).submit();
 		Thread.sleep(3000);
