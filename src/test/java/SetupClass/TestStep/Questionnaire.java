@@ -72,8 +72,8 @@ public class Questionnaire extends Setup {
 		Thread.sleep(1000);
 		WebElement uploadElement= driver.findElement(By.cssSelector("#ajax-upload-id-1592220297109")).click();
 		Thread.sleep(1000);
-		uploadElement.sendKeys("C:/Users/Administrator/Downloads");
-		Thread.sleep(2000);
+		//uploadElement.sendKeys("C:/Users/Administrator/Downloads");
+		//Thread.sleep(2000);
 	}
 
 	@Then("^user click on submit on questionnaire form$")
