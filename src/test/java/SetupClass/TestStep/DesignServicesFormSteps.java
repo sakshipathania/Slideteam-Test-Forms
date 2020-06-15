@@ -52,6 +52,9 @@ public class DesignServicesFormSteps extends Setup{
 	@Then("^user attach a file on design services form$")
 	public void user_attach_a_file_on_design_services_form() throws Throwable {
 		Thread.sleep(1000);
+		WebElement attach= driver.findElement("#mulitplefileuploader > label > span"));
+		attach.click();
+		Thread.sleep(1000);
 	    	}
 
 	@Then("^user submit the design services form$")
