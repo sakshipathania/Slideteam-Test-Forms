@@ -74,7 +74,10 @@ public class Questionnaire extends Setup {
 		Thread.sleep(1000);
 		Upload.click();
 		Thread.sleep(1000);
-		driver.close();
+		Alert alert = driver.switchTo().alert();
+		Thread.sleep(2000);
+		alert.cancel();
+		//driver.close();
 		//upload.sendKeys("C:/Users/Administrator/Downloads");
 		//Thread.sleep(2000);
 	}
