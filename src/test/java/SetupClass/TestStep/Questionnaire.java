@@ -15,6 +15,7 @@ import java.awt.AWTException;
 import java.awt.Robot; 
 import java.awt.event.KeyEvent; 
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import SetupClass.Setup;
 import cucumber.api.java.en.Given;
@@ -24,6 +25,7 @@ import cucumber.api.java.en.Then;
 public class Questionnaire extends Setup {
 
 	JavascriptExecutor js = (JavascriptExecutor) driver;
+	WebDriverWait wait = new WebDriverWait(driver,50);
 	
 	@Given("^user is already on questionnaire form page$")
 	public void user_is_already_on_questionnaire_form_page() throws Throwable {
@@ -77,7 +79,7 @@ public class Questionnaire extends Setup {
 	@Then("^User click on Upload button")
 	public void User_click_on_Upload_button() throws Throwable {
 		Thread.sleep(6000);
-	        driver.findElement(By.name("myfile[]")).click();
+	        wait.until(ExpectedConditions.elementToBeClickable(By.name("myfile[]")).click();
 		Thread.sleep(6000);
 		//Upload.click();
 		//Thread.sleep(3000);
