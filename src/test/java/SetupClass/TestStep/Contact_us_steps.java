@@ -33,7 +33,7 @@ public class Contact_us_steps extends Setup {
 		driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
 		log.info("It's opening the website URL");
 		Thread.sleep(1000);
-		
+		driver.get("https://www.slideteam.net/contacts");
 		try {
 			WebElement iframe = driver.findElement(By.id("livechat-full-view"));
 			if(iframe.isDisplayed()) {
@@ -61,10 +61,10 @@ public class Contact_us_steps extends Setup {
 				}
 		
 		Thread.sleep(3000);
-		WebElement Contact= driver.findElement(By.cssSelector("div.links:nth-child(6) > ul:nth-child(2) > li:nth-child(4) > a:nth-child(1)"));
-		js.executeScript("arguments[0].scrollIntoView();",Contact);
+		//WebElement Contact= driver.findElement(By.cssSelector("div.links:nth-child(6) > ul:nth-child(2) > li:nth-child(4) > a:nth-child(1)"));
+		//js.executeScript("arguments[0].scrollIntoView();",Contact);
 		
-		Contact.click();
+		//Contact.click();
 		
 		Thread.sleep(1000);
 	}
