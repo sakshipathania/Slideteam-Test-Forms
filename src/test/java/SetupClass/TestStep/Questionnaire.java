@@ -77,19 +77,14 @@ public class Questionnaire extends Setup {
 	@Then("^User click on Upload button")
 	public void User_click_on_Upload_button() throws Throwable {
 		Thread.sleep(1000);
-		WebElement Upload= driver.findElement(By.xpath("//a[contains(text(),'Upload')]"));;
+		WebElement Upload= driver.findElement(By.xpath("//*[@id='ajax-upload-id-1592283901527']"));;
 		js.executeScript("arguments[0].scrollIntoView();",Upload);	
 		Thread.sleep(1000);
 		Upload.click();
-		Thread.sleep(1000);
-		try { 
-
-          Robot robot = new Robot(); 
-          robot.keyPress(KeyEvent.VK_ESCAPE); 
-         } 
-          catch (AWTException e) { 
-           e.printStackTrace(); 
-         } 
+		Thread.sleep(3000);
+		Robot r = new Robot(); 
+		r.keyPress(KeyEvent.VK_ESCAPE); 
+		r.keyRelease(KeyEvent.VK_ESCAPE);
 	}
 
 	@Then("^user click on submit on questionnaire form$")
