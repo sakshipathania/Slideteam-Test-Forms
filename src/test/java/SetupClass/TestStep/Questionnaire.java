@@ -81,7 +81,7 @@ public class Questionnaire extends Setup {
 		try { 
 
           Robot robot = new Robot(); 
-          robot.keyPress(KeyEvent.VK_ESC); 
+          robot.keyPress(KeyEvent.VK_ESCAPE); 
          } 
           catch (AWTException e) { 
            e.printStackTrace(); 
