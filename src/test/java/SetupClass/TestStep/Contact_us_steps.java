@@ -59,7 +59,12 @@ public class Contact_us_steps extends Setup {
 				catch(NoSuchElementException NCP) {
 					
 				}
-		driver.findElement(By.cssSelector("div.links:nth-child(6) > ul:nth-child(2) > li:nth-child(4) > a:nth-child(1)")).click();
+		
+		Thread.sleep(3000);
+		WebElement Contact= driver.findElement(By.cssSelector("div.links:nth-child(6) > ul:nth-child(2) > li:nth-child(4) > a:nth-child(1)"));
+		js.executeScript("arguments[0].scrollIntoView();",Contact);
+		
+		Contact.click();
 		
 		Thread.sleep(1000);
 	}
