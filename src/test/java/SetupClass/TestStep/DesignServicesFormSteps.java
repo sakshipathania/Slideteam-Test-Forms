@@ -7,6 +7,8 @@ import java.sql.Date;
 import java.text.SimpleDateFormat;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.By;
+import java.awt.Robot; 
+import java.awt.event.KeyEvent;
 
 import SetupClass.Setup;
 import cucumber.api.java.en.Given;
@@ -52,9 +54,12 @@ public class DesignServicesFormSteps extends Setup{
 	@Then("^user attach a file on design services form$")
 	public void user_attach_a_file_on_design_services_form() throws Throwable {
 		Thread.sleep(1000);
-		//WebElement attach= driver.findElement(By.cssSelector("#mulitplefileuploader > label > span"));
-		//attach.click();
-		//Thread.sleep(1000);
+		WebElement attach= driver.findElement(By.cssSelector("#mulitplefileuploader > label > span"));
+		attach.click();
+		Thread.sleep(3000);
+		Robot r = new Robot(); 
+		r.keyPress(KeyEvent.VK_ESCAPE); 
+		r.keyRelease(KeyEvent.VK_ESCAPE);
 	    	}
 
 	@Then("^user submit the design services form$")
