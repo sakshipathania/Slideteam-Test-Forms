@@ -30,8 +30,7 @@ public class Contact_us_steps extends Setup {
 	@Then("^user enter name$")
 	public void user_enter_name() throws Throwable {
 		Thread.sleep(1000);
-		WebElemwnt Name= driver.findElement(By.id("//*[@id='name']"));
-		Name.sendKeys("SlideTeam Testing");
+		driver.findElement(By.id("//*[@id='name']")).sendKeys("SlideTeam Testing");
 		Thread.sleep(1000);
 	    
 	}
