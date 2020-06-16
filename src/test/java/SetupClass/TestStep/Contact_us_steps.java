@@ -30,7 +30,8 @@ public class Contact_us_steps extends Setup {
 	@Then("^user enter name$")
 	public void user_enter_name() throws Throwable {
 		Thread.sleep(1000);
-		driver.findElement(By.id("name")).sendKeys("SlideTeam Testing");
+		WebElemwnt Name= driver.findElement(By.id("//*[@id='name']"));
+		Name.sendKeys("SlideTeam Testing");
 		Thread.sleep(1000);
 	    
 	}
@@ -39,14 +40,14 @@ public class Contact_us_steps extends Setup {
 	public void user_enter_email()throws Throwable
 	{
 		Thread.sleep(1000);
-		driver.findElement(By.id("email")).sendKeys("slidetech.qa@gmail.com");
+		driver.findElement(By.cssSelector("//*[@id='email']")).sendKeys("slidetech.qa@gmail.com");
 		Thread.sleep(1000);
 	}
 	
 	@Then("^user enter mobile number$")
 	public void user_enter_mobile_number()  throws Throwable {
 		Thread.sleep(1000);
-		driver.findElement(By.id("telephone")).sendKeys("877566756657");
+		driver.findElement(By.cssSelector("//*[@id='telephone']")).sendKeys("877566756657");
 		Thread.sleep(1000);
 	}
 
@@ -57,7 +58,7 @@ public class Contact_us_steps extends Setup {
 	    Date date = new Date(System.currentTimeMillis());  
 	    message_write_time=formatter.format(date);
 	    System.out.println(Button_Click_Time);  
-		driver.findElement(By.id("comment")).sendKeys("This is a text message for QA purposes sent by an automated program. Please ignore."+ "\n"+""+""+
+		driver.findElement(By.cssSelector("//*[@id='comment']")).sendKeys("This is a text message for QA purposes sent by an automated program. Please ignore."+ "\n"+""+""+
 								"Page URL is:-> https://www.slideteam.net/contacts"+"\n"+""+""+ 
 								"Current Time is:->"+message_write_time);		
 		Thread.sleep(2000);
