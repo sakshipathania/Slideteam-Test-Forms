@@ -10,6 +10,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.interactions.Actions;
+import java.awt.Robot; 
+import java.awt.event.KeyEvent;
 
 import SetupClass.Setup;
 import cucumber.api.java.en.Given;
@@ -127,7 +129,10 @@ public class ResearchServicesSteps extends Setup {
 		
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//*[@id='mulitplefileuploader']/div[1]/div/label/span")).click();
-		driver.close();
+		Robot r = new Robot(); 
+		r.keyPress(KeyEvent.VK_ESCAPE); 
+		r.keyRelease(KeyEvent.VK_ESCAPE);
+		
 		try {
 		driver.findElement(By.id("finalSubmit")).submit();
 		Thread.sleep(3000);
