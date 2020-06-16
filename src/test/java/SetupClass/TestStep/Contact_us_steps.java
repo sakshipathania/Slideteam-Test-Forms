@@ -22,32 +22,6 @@ public class Contact_us_steps extends Setup {
 		driver.get(AppURL);
 		driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
 		log.info("It's opening the website URL");
-		try {
-			WebElement iframe = driver.findElement(By.id("livechat-full-view"));
-			if(iframe.isDisplayed()) {
-				driver.switchTo().frame(iframe);   
-				 Actions act = new Actions(driver);
-				 act.moveToElement(driver.findElement(By.cssSelector("#title .icon-minimize"))).build().perform();
-				 Thread.sleep(2000);
-					WebElement chat1=driver.findElement(By.cssSelector("#title .icon-minimize"));
-					 Thread.sleep(1000);
-						chat1.click();
-						 Thread.sleep(1000);
-						 driver.switchTo().defaultContent();
-						 Thread.sleep(1000);
-						 driver.switchTo().parentFrame();
-					 Thread.sleep(1000);
-			}
-			else {
-				
-
-			System.out.println("chat window does not open");
-			}
-		}
-				catch(NoSuchElementException NCP) {
-					
-				}
-		
 		Thread.sleep(1000);
 		driver.findElement(By.cssSelector("div.links:nth-child(6) > ul:nth-child(2) > li:nth-child(4) > a:nth-child(1)")).click();
 		Thread.sleep(1000);
@@ -56,7 +30,7 @@ public class Contact_us_steps extends Setup {
 	@Then("^user enter name$")
 	public void user_enter_name() throws Throwable {
 		Thread.sleep(1000);
-		driver.findElement(By.id("//*[@id='name']")).sendKeys("SlideTeam Testing");
+		driver.findElement(By.id("name")).sendKeys("SlideTeam Testing");
 		Thread.sleep(1000);
 	    
 	}
@@ -65,14 +39,14 @@ public class Contact_us_steps extends Setup {
 	public void user_enter_email()throws Throwable
 	{
 		Thread.sleep(1000);
-		driver.findElement(By.cssSelector("//*[@id='email']")).sendKeys("slidetech.qa@gmail.com");
+		driver.findElement(By.id("email")).sendKeys("slidetech.qa@gmail.com");
 		Thread.sleep(1000);
 	}
 	
 	@Then("^user enter mobile number$")
 	public void user_enter_mobile_number()  throws Throwable {
 		Thread.sleep(1000);
-		driver.findElement(By.cssSelector("//*[@id='telephone']")).sendKeys("877566756657");
+		driver.findElement(By.id("telephone")).sendKeys("877566756657");
 		Thread.sleep(1000);
 	}
 
@@ -83,7 +57,7 @@ public class Contact_us_steps extends Setup {
 	    Date date = new Date(System.currentTimeMillis());  
 	    message_write_time=formatter.format(date);
 	    System.out.println(Button_Click_Time);  
-		driver.findElement(By.cssSelector("//*[@id='comment']")).sendKeys("This is a text message for QA purposes sent by an automated program. Please ignore."+ "\n"+""+""+
+		driver.findElement(By.id("comment")).sendKeys("This is a text message for QA purposes sent by an automated program. Please ignore."+ "\n"+""+""+
 								"Page URL is:-> https://www.slideteam.net/contacts"+"\n"+""+""+ 
 								"Current Time is:->"+message_write_time);		
 		Thread.sleep(2000);
