@@ -54,9 +54,8 @@ public class DesignServicesFormSteps extends Setup{
 	@Then("^user attach a file on design services form$")
 	public void user_attach_a_file_on_design_services_form() throws Throwable {
 		Thread.sleep(1000);
-		WebElement attach= driver.findElement(By.cssSelector("#mulitplefileuploader > label > span"));
+		WebElement attach= driver.findElement(By.xpath("//*[@id='mulitplefileuploader']/div[1]/div/label/span"));
 		attach.click();
-		Thread.sleep(3000);
 		Robot r = new Robot(); 
 		r.keyPress(KeyEvent.VK_ESCAPE); 
 		r.keyRelease(KeyEvent.VK_ESCAPE);
