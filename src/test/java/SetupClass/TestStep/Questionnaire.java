@@ -22,6 +22,8 @@ import cucumber.api.java.en.Then;
 
 public class Questionnaire extends Setup {
 
+	JavascriptExecutor js = (JavascriptExecutor) driver;
+	
 	@Given("^user is already on questionnaire form page$")
 	public void user_is_already_on_questionnaire_form_page() throws Throwable {
 		Thread.sleep(1000);
