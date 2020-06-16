@@ -22,6 +22,33 @@ public class Contact_us_steps extends Setup {
 	// contact us form
 	JavascriptExecutor js = (JavascriptExecutor) driver;
 	
+	public void chat_pop_up() throws InterruptedException
+	{
+		try {
+			WebElement iframe = driver.findElement(By.id("livechat-full-view"));
+			if(iframe.isDisplayed()) {
+				driver.switchTo().frame(iframe);   
+				 Actions act = new Actions(driver);
+				 act.moveToElement(driver.findElement(By.cssSelector("#title .icon-minimize"))).build().perform();
+				 Thread.sleep(2000);
+					WebElement chat1=driver.findElement(By.cssSelector("#title .icon-minimize"));
+					 Thread.sleep(1000);
+						chat1.click();
+						 Thread.sleep(1000);
+						 driver.switchTo().defaultContent();
+						 Thread.sleep(1000);
+						 driver.switchTo().parentFrame();
+					 Thread.sleep(1000);
+			}
+			else {
+					System.out.println("chat window does not open");
+			     }
+		}
+				catch(NoSuchElementException NCP) {
+					
+				}
+	}
+	
 	@Given("^user is already on contact us form$")
 	public void user_is_already_on_contact_us_form()  throws Throwable {
 		driver.get(AppURL);
@@ -29,11 +56,12 @@ public class Contact_us_steps extends Setup {
 		log.info("It's opening the website URL");
 		Thread.sleep(3000);
 		
-		WebElement Contact_us= driver.findElement(By.cssSelector("body > div.page-wrapper > footer > div > div > div.footer-outer > div > div:nth-child(6) > ul > li:nth-child(4) > a"));
-		js.executeScript("arguments[0].scrollIntoView();",Contact_us);
+		WebElement Contact_us= driver.findElement(By.xpath("//a[@title=' Contact Us'][contains(.,'Contact Us')]"));
 		Thread.sleep(3000);
+		js.executeScript("arguments[0].scrollIntoView();",Contact_us);
 		Contact_us.click();
 		Thread.sleep(1000);
+		chat_pop_up();
 		
 	}
 
