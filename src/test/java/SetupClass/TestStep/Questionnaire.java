@@ -11,6 +11,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.Alert;
+import java.awt.AWTException; 
+import java.awt.Robot; 
+import java.awt.event.KeyEvent; 
 
 import SetupClass.Setup;
 import cucumber.api.java.en.Given;
@@ -75,12 +78,14 @@ public class Questionnaire extends Setup {
 		Thread.sleep(1000);
 		Upload.click();
 		Thread.sleep(1000);
-		Alert alert = driver.switchTo().alert();
-		Thread.sleep(2000);
-		alert.cancel();
-		//driver.close();
-		//upload.sendKeys("C:/Users/Administrator/Downloads");
-		//Thread.sleep(2000);
+		try { 
+
+          Robot robot = new Robot(); 
+          robot.keyPress(KeyEvent.VK_Esc); 
+         } 
+          catch (AWTException e) { 
+           e.printStackTrace(); 
+         } 
 	}
 
 	@Then("^user click on submit on questionnaire form$")
