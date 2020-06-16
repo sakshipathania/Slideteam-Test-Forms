@@ -77,7 +77,7 @@ public class Questionnaire extends Setup {
 	@Then("^User click on Upload button")
 	public void User_click_on_Upload_button() throws Throwable {
 		Thread.sleep(1000);
-		WebElement Upload= driver.findElement(By.cssSelector("#ajax-upload-id-1592283901527"));;
+		WebElement Upload= driver.findElement(By.xpath("/html/body/div[2]/main/div[2]/div/div[2]/form/div/div/div[2]/ul/li[5]/div/div/div[1]/div[1]/div/form/input"));;
 		js.executeScript("arguments[0].scrollIntoView();",Upload);	
 		Thread.sleep(1000);
 		Upload.click();
