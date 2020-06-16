@@ -79,7 +79,7 @@ public class Questionnaire extends Setup {
 		Thread.sleep(1000);
 	        driver.findElement(By.xpath("//*[@id='ajax-upload-id-1592290658704']")).click();
 		Thread.sleep(1000);
-		Upload.click();
+		//Upload.click();
 		//Thread.sleep(3000);
 		Robot r = new Robot(); 
 		r.keyPress(KeyEvent.VK_ESCAPE); 
