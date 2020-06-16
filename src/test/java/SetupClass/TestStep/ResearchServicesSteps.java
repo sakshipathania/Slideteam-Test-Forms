@@ -129,7 +129,7 @@ public class ResearchServicesSteps extends Setup {
 		
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//*[@id='mulitplefileuploader']/div[1]/div/label/span")).click();
-		Thread.sleep(3000);
+		
 		Robot r = new Robot(); 
 		r.keyPress(KeyEvent.VK_ESCAPE); 
 		r.keyRelease(KeyEvent.VK_ESCAPE);
