@@ -74,18 +74,17 @@ public class Questionnaire extends Setup {
 		Thread.sleep(1000);
 	}
 	
-	/*@Then("^User click on Upload button")
+	@Then("^User click on Upload button")
 	public void User_click_on_Upload_button() throws Throwable {
 		Thread.sleep(1000);
-		WebElement Upload= driver.findElement(By.xpath("/html/body/div[2]/main/div[2]/div/div[2]/form/div/div/div[2]/ul/li[5]/div/div/div[1]/div[1]/div/form/input"));;
-		js.executeScript("arguments[0].scrollIntoView();",Upload);	
+		WebElement Upload= driver.findElement(By.xpath("/html/body/div[2]/main/div[2]/div/div[2]/form/div/div/div[2]/ul/li[5]/div/div/div[1]/div[1]/div/form/input"));
 		Thread.sleep(1000);
 		Upload.click();
 		Thread.sleep(3000);
 		Robot r = new Robot(); 
 		r.keyPress(KeyEvent.VK_ESCAPE); 
 		r.keyRelease(KeyEvent.VK_ESCAPE);
-	}*/
+	}
 
 	@Then("^user click on submit on questionnaire form$")
 	public void user_click_on_submit_on_questionnaire_form() throws Throwable {
