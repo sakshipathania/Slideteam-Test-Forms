@@ -60,7 +60,6 @@ public class Contact_us_steps extends Setup {
 		Thread.sleep(3000);
 		js.executeScript("arguments[0].scrollIntoView();",Contact_us);
 		Contact_us.click();
-		Thread.sleep(1000);
 		chat_pop_up();
 		
 	}
