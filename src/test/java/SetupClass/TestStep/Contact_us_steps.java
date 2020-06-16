@@ -29,9 +29,9 @@ public class Contact_us_steps extends Setup {
 		log.info("It's opening the website URL");
 		Thread.sleep(3000);
 		
-		WebElement Contact_us= driver.findElement(By.xpath("/html/body/div[2]/footer/div/div/div[3]/div/div[6]/ul/li[4]/a"));
+		WebElement Contact_us= driver.findElement(By.cssSelector("body > div.page-wrapper > footer > div > div > div.footer-outer > div > div:nth-child(6) > ul > li:nth-child(4) > a"));
 		js.executeScript("arguments[0].scrollIntoView();",Contact_us);
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 		Contact_us.click();
 		Thread.sleep(1000);
 		
