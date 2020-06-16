@@ -14,6 +14,7 @@ import org.openqa.selenium.Alert;
 import java.awt.AWTException; 
 import java.awt.Robot; 
 import java.awt.event.KeyEvent; 
+import org.openqa.selenium.JavascriptExecutor;
 
 import SetupClass.Setup;
 import cucumber.api.java.en.Given;
