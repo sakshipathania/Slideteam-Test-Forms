@@ -74,7 +74,8 @@ public class Questionnaire extends Setup {
 	@Then("^User click on Upload button")
 	public void User_click_on_Upload_button() throws Throwable {
 		Thread.sleep(1000);
-		WebElement Upload= driver.findElement(By.name("myfile[]"));
+		WebElement Upload= driver.findElement(By.xpath("//a[contains(text(),'Upload')]"));;
+		js.executeScript("arguments[0].scrollIntoView();",Upload);	
 		Thread.sleep(1000);
 		Upload.click();
 		Thread.sleep(1000);
