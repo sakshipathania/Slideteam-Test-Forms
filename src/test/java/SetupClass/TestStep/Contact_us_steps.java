@@ -26,7 +26,7 @@ import cucumber.api.java.en.Then;
 public class Contact_us_steps extends Setup {
 	
 	// contact us form
-	
+	JavascriptExecutor js = (JavascriptExecutor) driver;
 	@Given("^user is already on contact us form$")
 	public void user_is_already_on_contact_us_form()  throws Throwable {
 		driver.get(AppURL);
