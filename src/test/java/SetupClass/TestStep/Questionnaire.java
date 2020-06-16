@@ -80,7 +80,9 @@ public class Questionnaire extends Setup {
 	@Then("^User click on Upload button")
 	public void User_click_on_Upload_button() throws Throwable {
 		Thread.sleep(6000);
-	        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[text()='Upload']"))).click();
+	        WebElement Upload= wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[text()='Upload']")));
+		Thread.sleep(2000);
+		Upload.click();
 		Thread.sleep(3000);
 		//Upload.click();
 		//Thread.sleep(3000);
