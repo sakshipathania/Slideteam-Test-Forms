@@ -1,4 +1,4 @@
-@ResumeService
+@ResumeServices
 Feature: Resume Service form Test
 Scenario: Test submit resume rquest
 Given chat popup
