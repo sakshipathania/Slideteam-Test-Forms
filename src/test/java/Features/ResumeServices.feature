@@ -1,7 +1,7 @@
 @ResumeServices
 Feature: Resume Service form Test
 Scenario: Test submit resume rquest
-Given chat popup
+Given chat popup1
 Then user is already on Submit your Resume Request form
 Then user enter name on Resume form
 Then user enter email on resume form
