@@ -115,7 +115,7 @@ public class ResumeServices extends Setup {
 	@Then("^User click on Upload Resume button")
 	public void User_click_on_Upload_Resume_button() throws Throwable {
 		Thread.sleep(6000);
-	        WebElement Upload= driver.findElement(By.xpath("//*[text()='Upload']"));
+	        WebElement Upload= driver.findElement(By.xpath("/html/body/div[2]/main/div[2]/div/div[3]/div/form/div[1]/div[3]/div/div[1]/div[1]/div/label"));
 		Thread.sleep(2000);
 		Upload.click();
 		Thread.sleep(3000);
