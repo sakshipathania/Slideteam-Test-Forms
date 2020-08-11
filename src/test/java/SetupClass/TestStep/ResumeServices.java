@@ -54,6 +54,7 @@ public class ResumeServices extends Setup {
 		try {
 			driver.get("https://www.slideteam.net/resume_service");
 		//driver.findElement(By.cssSelector("div.links:nth-child(6) > ul:nth-child(2) > li:nth-child(10) > a:nth-child(1)"));
+			driver.findElement(By.xpath("/html/body/div[5]/div/div[2]/div/div/div/div/div[2]/div/a")).click();
 		
 		//*Submit.click();
 			Thread.sleep(3000);	
