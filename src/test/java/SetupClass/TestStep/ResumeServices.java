@@ -20,8 +20,8 @@ import cucumber.api.java.en.Then;
 
 public class ResumeServices extends Setup {
 
-	@Given("^chat popup$")
-        public void chat_pop_up() throws InterruptedException
+	@Given("^chat popup1$")
+        public void chat_pop_up1() throws InterruptedException
         {
         try {
             WebElement iframe = driver.findElement(By.id("livechat-full-view"));
