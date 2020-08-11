@@ -47,12 +47,12 @@ public class ResumeServices extends Setup {
                     
                 }
     }
-	@Then("^user is already on Submit Your Business Research Requirements form$")
-	public void user_is_already_on_Submit_Your_Business_Research_Requirements_form() throws Throwable  {
+	@Then("^user is already on Submit your Resume Request form$")
+	public void user_is_already_on_Submit_your_Resume_Request_form() throws Throwable  {
 	
 		Thread.sleep(3000);
 		try {
-			driver.get("https://www.slideteam.net/powerpoint_presentation_design_services/business_research_services");
+			driver.get("https://www.slideteam.net/resume_service");
 		//driver.findElement(By.cssSelector("div.links:nth-child(6) > ul:nth-child(2) > li:nth-child(10) > a:nth-child(1)"));
 		
 		//*Submit.click();
@@ -62,41 +62,30 @@ public class ResumeServices extends Setup {
 	  }
 		
 	}
-	@Then("^user enter name on rs form$")
-	public void user_enter_name_on_rs_form()  throws Throwable {
+	@Then("^user enter name on Resume form$")
+	public void user_enter_name_on_Resume_form()  throws Throwable {
 		Thread.sleep(3000);
 		try {
-		driver.findElement(By.id("name")).sendKeys("SlideTeam Testing");
+		driver.findElement(By.cssSelector("#customresumeservice_form1 > div.clearfix.form-top-block > div:nth-child(1) > div > input")).sendKeys("SlideTeam Testing");
 		Thread.sleep(3000);
 	} catch (NoSuchElementException popup) {
 	  }
 		
 	}
 
-	@Then("^user enter email on rs form$")
-	public void user_enter_email_on_rs_form() throws Throwable {
+	@Then("^user enter email on resume form$")
+	public void user_enter_email_on_resume_form() throws Throwable {
 		Thread.sleep(3000);
 		try {
-		driver.findElement(By.id("form_email")).sendKeys("slidetech.qa@gmail.com");
+		driver.findElement(By.xpath("/html/body/div[2]/main/div[2]/div/div[3]/div/form/div[1]/div[2]/div/input")).sendKeys("slidetech.qa@gmail.com");
 		Thread.sleep(3000);
 	} catch (NoSuchElementException popup) {
 	  }
 		
 	}
 
-	@Then("^user enter mobile number on rs form$")
-	public void user_enter_mobile_number_on_rs_form()throws Throwable  {
-		Thread.sleep(3000);
-		try {
-		driver.findElement(By.id("telephone")).sendKeys("5678912345");
-		Thread.sleep(3000);
-	} catch  (NoSuchElementException popup) {
-	  }
-		
-	}
-
-	@Then("^user enter comment on rs form$")
-	public void user_enter_comment_on_rs_form()  throws Throwable{
+	@Then("^user enter comment on resume form$")
+	public void user_enter_comment_on_resume_form()  throws Throwable{
 		Thread.sleep(3000);
 		try {
 		//driver.findElement(By.id("comment")).sendKeys("This is a text message for QA purposes sent by an automated program. Please ignore.");
@@ -104,38 +93,44 @@ public class ResumeServices extends Setup {
 	    Date date = new Date(System.currentTimeMillis());  
 	    message_write_time=formatter.format(date);
 	    System.out.println(Button_Click_Time);  
-		driver.findElement(By.id("comment")).sendKeys("This is a text message for QA purposes sent by an automated program. Please ignore."+ "\n"+
-								"Page URL is:-> https://www.slideteam.net/powerpoint_presentation_design_services"+"\n"+ 
-								"Current Time is:->"+message_write_time);	
+		driver.findElement(By.cssSelector("#customresumeservice_form1 > div.clearfix.form-top-block > div:nth-child(4) > div > input[type=text]")).sendKeys("This is a text message for QA purposes sent by an automated program. Please ignore.");	
 		Thread.sleep(3000);
 	} catch (NoSuchElementException popup) {
 	  }
 		
 	}
 
-	@Then("^user enter captcha on rs form$")
-	public void user_enter_captcha_on_rs_form() throws Throwable {
+	@Then("^user enter captcha on resume form$")
+	public void user_enter_captcha_on_resume_form() throws Throwable {
 		Thread.sleep(3000);
 		try {
-		driver.findElement(By.id("captcha_business_research_services_captcha")).sendKeys("Aj7W2mtf9namwf55");
+		driver.findElement(By.id("captcha_resume_service_captcha1")).sendKeys("Aj7W2mtf9namwf55");
 		Thread.sleep(3000);
 	} catch (NoSuchElementException popup) {
 	  }
 		
 	}
-
-	@Then("^user click on submit button on rs form$")
-	public void user_click_on_submit_button_on_rs_form() throws Throwable {
-		
+	
+	@Then("^User click on Upload Resume button")
+	public void User_click_on_Upload_Resume_button() throws Throwable {
+		Thread.sleep(6000);
+	        WebElement Upload= wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[text()='Upload']")));
+		Thread.sleep(2000);
+		Upload.click();
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("//*[@id='mulitplefileuploader']/div[1]/div/label/span")).click();
-		
+		//Upload.click();
+		//Thread.sleep(3000);
 		Robot r = new Robot(); 
 		r.keyPress(KeyEvent.VK_ESCAPE); 
 		r.keyRelease(KeyEvent.VK_ESCAPE);
+	}
+	
+
+	@Then("^user click on submit button on resume form$")
+	public void user_click_on_submit_button_on_resume_form() throws Throwable {
 		
 		try {
-		driver.findElement(By.id("finalSubmit")).submit();
+		driver.findElement(By.xpath("/html/body/div[2]/main/div[2]/div/div[3]/div/form/div[2]/div[2]/input")).submit();
 		Thread.sleep(3000);
 		
 	} catch (NoSuchElementException popup) {
