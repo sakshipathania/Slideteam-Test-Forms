@@ -105,7 +105,7 @@ public class ResumeServices extends Setup {
 	public void user_enter_captcha_on_resume_form() throws Throwable {
 		Thread.sleep(3000);
 		try {
-		driver.findElement(By.id("captcha_resume_service_captcha1")).sendKeys("12345");
+		driver.findElement(By.id("captcha_resume_service_captcha1")).sendKeys("Aj7W2mtf9namwf55");
 		Thread.sleep(3000);
 	} catch (NoSuchElementException popup) {
 	  }
