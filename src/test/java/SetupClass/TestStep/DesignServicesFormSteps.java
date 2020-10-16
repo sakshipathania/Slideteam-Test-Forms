@@ -67,6 +67,16 @@ public class DesignServicesFormSteps extends Setup{
 		r.keyRelease(KeyEvent.VK_ESCAPE);
 	    	}
 
+	@Then("^user enter captcha on DS form$")
+	public void user_enter_captcha_on_DS_form() throws Throwable {
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		WebElement blog_captcha = wait.until(ExpectedConditions.elementToBeClickable(By.id("captcha_custom_design_service_captcha")));
+	    Thread.sleep(8000);
+	    blog_captcha.sendKeys("Aj7W2mtf9namwf55");
+	    Thread.sleep(8000);
+   
+	}
+	
 	@Then("^user submit the design services form$")
 	public void user_submit_the_design_services_form() throws Throwable {
 	    Thread.sleep(1000);
