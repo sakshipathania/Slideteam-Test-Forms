@@ -100,6 +100,16 @@ public class Contact_Us_To_Get_Started extends Setup {
 		Thread.sleep(1000);
 	}
 
+	@Then("^user enter captcha on cs form$")
+	public void user_enter_captcha_on_cs_form() throws Throwable {
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		WebElement blog_captcha = wait.until(ExpectedConditions.elementToBeClickable(By.id("captcha_hire_a_designer_captcha")));
+	    Thread.sleep(8000);
+	    blog_captcha.sendKeys("Aj7W2mtf9namwf55");
+	    Thread.sleep(8000);
+   
+	}
+	
 	@Then("^user click on submit button on gs form$")
 	public void user_click_on_submit_button_on_gs_form() throws Throwable {
 		Thread.sleep(1000);
