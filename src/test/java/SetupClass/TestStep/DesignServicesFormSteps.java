@@ -5,11 +5,15 @@ import java.io.File;
 import java.io.FileWriter;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
+
+import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.By;
 import java.awt.Robot; 
 import java.awt.event.KeyEvent;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import SetupClass.Setup;
 import cucumber.api.java.en.Given;
@@ -18,6 +22,9 @@ import cucumber.api.java.en.Then;
 
 public class DesignServicesFormSteps extends Setup{
 
+	WebDriverWait wait = new WebDriverWait(driver,50);
+	JavascriptExecutor js;
+	
 	@Given("^user is already on design services page$")
 	public void user_is_already_on_design_services_page() throws Throwable {
 	    Thread.sleep(1000);
