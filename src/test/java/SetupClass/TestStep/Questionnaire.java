@@ -90,6 +90,17 @@ public class Questionnaire extends Setup {
 		r.keyPress(KeyEvent.VK_ESCAPE); 
 		r.keyRelease(KeyEvent.VK_ESCAPE);
 	}
+	
+	@Then("^user enter captcha on q form$")
+	public void user_enter_captcha_on_q_form() throws Throwable {
+		Thread.sleep(3000);
+		try {
+		driver.findElement(By.id("captcha_questionnaire_captcha")).sendKeys("Aj7W2mtf9namwf55");
+		Thread.sleep(3000);
+	} catch (NoSuchElementException popup) {
+	  }
+		
+	}
 
 	@Then("^user click on submit on questionnaire form$")
 	public void user_click_on_submit_on_questionnaire_form() throws Throwable {
