@@ -79,7 +79,7 @@ public class ResumeServices extends Setup {
 	public void user_enter_email_on_resume_form() throws Throwable {
 		Thread.sleep(3000);
 		try {
-		driver.findElement(By.xpath("/html/body/div[2]/main/div[2]/div/div[3]/div/form/div[1]/div[2]/div/input")).sendKeys("slidetech.qa@gmail.com");
+		driver.findElement(By.cssSelector("#customresumeservice_form1 > div.clearfix.form-top-block > div:nth-child(2) > div.input-box > input")).sendKeys("slidetech.qa@gmail.com");
 		Thread.sleep(3000);
 	} catch (NoSuchElementException popup) {
 	  }
