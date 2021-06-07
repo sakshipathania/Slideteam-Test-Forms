@@ -133,7 +133,7 @@ public class ResumeServices extends Setup {
 		
 		try {
 			Thread.sleep(3000);
-		driver.findElement(By.xpath("/html/body/div[2]/main/div[2]/div/div[3]/div/form/div[2]/div[2]/input")).submit();
+		driver.findElement(By.cssSelector("#customresumeservice_form1 > div.clearfix.inner-attach > div.col.submit_file > div > input[type=submit]")).submit();
 		Thread.sleep(3000);
 		
 	} catch (NoSuchElementException popup) {
