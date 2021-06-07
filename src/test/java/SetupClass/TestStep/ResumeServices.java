@@ -132,6 +132,7 @@ public class ResumeServices extends Setup {
 	public void user_click_on_submit_button_on_resume_form() throws Throwable {
 		
 		try {
+			Thread.sleep(3000);
 		driver.findElement(By.xpath("/html/body/div[2]/main/div[2]/div/div[3]/div/form/div[2]/div[2]/input")).submit();
 		Thread.sleep(3000);
 		
