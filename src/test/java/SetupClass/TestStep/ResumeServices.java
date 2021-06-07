@@ -116,10 +116,10 @@ public class ResumeServices extends Setup {
 	@Then("^User click on Upload Resume button")
 	public void User_click_on_Upload_Resume_button() throws Throwable {
 		Thread.sleep(6000);
-	        WebElement Upload= driver.findElement(By.xpath("/html/body/div[2]/main/div[2]/div/div[3]/div/form/div[1]/div[3]/div/div[1]/div[1]/div/label"));
+	        WebElement Upload= driver.findElement(By.cssSelector("#mulitplefileuploader1 > div.ajax-upload-dragdrop.input-text > div > label"));
 		Thread.sleep(2000);
 		Upload.click();
-		Thread.sleep(3000);
+		Thread.sleep(10000);
 		//Upload.click();
 		//Thread.sleep(3000);
 		Robot r = new Robot(); 
