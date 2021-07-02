@@ -87,11 +87,9 @@ public class BlogComment extends Setup {
 		
 		try {
 		Thread.sleep(2000);
-		WebElement leave_a_comment= driver.findElement(By.cssSelector("#post-the-comment"));
+		driver.findElement(By.cssSelector("#post-the-comment")).click();
 		Thread.sleep(3000);		
-		js.executeScript("arguments[0].scrollIntoView();",leave_a_comment);
-		Thread.sleep(3000);
-		leave_a_comment.click();
+		
 		}
 		catch (NoSuchElementException popup) {
 		}
