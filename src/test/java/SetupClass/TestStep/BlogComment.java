@@ -83,9 +83,9 @@ public class BlogComment extends Setup {
 	}
 
 	@Then("^user click on Submit button on blog form$")
-	public void user_click_on_Submit_button_on_blog_form()throws Throwable {
+	public void user_click_on_Submit_button_on_blog_form() throws Throwable {
 		Thread.sleep(2000);
-		WebElement leave_a_comment= driver.findElement(By.xpath("//span[contains(.,'Leave a comment')]"));
+		WebElement leave_a_comment= driver.findElement(By.cssSelector("#post-the-comment"));
 		Thread.sleep(3000);		
 		js.executeScript("arguments[0].scrollIntoView();",leave_a_comment);
 		Thread.sleep(3000);
