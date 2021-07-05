@@ -91,7 +91,7 @@ public class BlogComment extends Setup {
 			Thread.sleep(2000);
 			js.executeScript("window.scrollBy(0,250)");
 		Thread.sleep(3000);		
-		blog_submit.click()
+		blog_submit.click();
 			Thread.sleep(3000);
 		}
 		catch (NoSuchElementException popup) {
