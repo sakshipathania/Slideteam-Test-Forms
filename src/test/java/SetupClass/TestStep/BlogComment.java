@@ -97,7 +97,7 @@ public class BlogComment extends Setup {
 		catch (NoSuchElementException popup) {
 		}*/
 		
-	}
+	
 	
 	
 }
