@@ -82,7 +82,7 @@ public class BlogComment extends Setup {
    
 	}
 
-	@Then("^user click on Submit button on blog form$")
+	/*@Then("^user click on Submit button on blog form$")
 	public void user_click_on_Submit_button_on_blog_form() throws Throwable {
 		
 		try {
@@ -95,7 +95,7 @@ public class BlogComment extends Setup {
 			Thread.sleep(3000);
 		}
 		catch (NoSuchElementException popup) {
-		}
+		}*/
 		
 	}
 	
