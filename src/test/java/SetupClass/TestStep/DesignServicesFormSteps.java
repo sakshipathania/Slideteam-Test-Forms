@@ -29,7 +29,18 @@ public class DesignServicesFormSteps extends Setup{
 	@Given("^user is already on design services page$")
 	public void user_is_already_on_design_services_page() throws Throwable {
 	    Thread.sleep(1000);
-	    driver.get("https://www.slideteam.net/powerpoint_presentation_design_services");
+	   // driver.get("https://www.slideteam.net/powerpoint_presentation_design_services");
+		try {
+			WebElement presentationServices = wait
+					.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@title='Presentation Services']")));
+			js.executeScript("arguments[0].scrollIntoView();", presentationServices);
+
+			presentationServices.click();
+
+		} catch (NoSuchElementException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	    Thread.sleep(1000);
 	}
 
@@ -95,7 +106,14 @@ public class DesignServicesFormSteps extends Setup{
 	    SimpleDateFormat formatter= new SimpleDateFormat("dd-MM-yyyy 'at' HH:mm:ss z"); 
 	    Date date = new Date(System.currentTimeMillis());  
 	    String Button_Click_Time=formatter.format(date);
-	    System.out.println(Button_Click_Time);  
+	    System.out.println(Button_Click_Time);
+		
+		//verify the successfull meaasge
+	    String verifySuccessfullMessage = wait.until(ExpectedConditions.elementToBeClickable(
+					By.xpath("//p[contains(text(),'Thank You for submitting your request to SlideTeam')]"))).getText();
+			Assert.assertTrue("contact us form is not submitted successfully", verifySuccessfullMessage.contentEquals("Thank You for contacting SlideTeam.net"));
+			System.out.println("contact us form submitted successfully");	
+		
 	}
 
 
