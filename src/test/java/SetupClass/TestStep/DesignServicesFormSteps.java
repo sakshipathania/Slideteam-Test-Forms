@@ -33,8 +33,7 @@ public class DesignServicesFormSteps extends Setup{
 		try {
 			WebElement presentationServices = wait
 					.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@title='Presentation Services']")));
-			js.executeScript("arguments[0].scrollIntoView();", presentationServices);
-
+		
 			presentationServices.click();
 
 		} catch (NoSuchElementException e) {
