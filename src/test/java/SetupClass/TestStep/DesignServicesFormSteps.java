@@ -5,7 +5,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
-
+import org.junit.Assert;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.By;
