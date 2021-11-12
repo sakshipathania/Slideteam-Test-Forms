@@ -106,7 +106,7 @@ public class DesignServicesFormSteps extends Setup{
 	    Date date = new Date(System.currentTimeMillis());  
 	    String Button_Click_Time=formatter.format(date);
 	    System.out.println(Button_Click_Time);
-		
+		Thread.sleep(2000);
 		//verify the successfull meaasge
 	    String verifySuccessfullMessage = wait.until(ExpectedConditions.elementToBeClickable(
 					By.xpath("//p[contains(text(),'Thank You for submitting your request to SlideTeam')]"))).getText();
