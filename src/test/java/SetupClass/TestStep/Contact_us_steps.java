@@ -32,8 +32,7 @@ public class Contact_us_steps extends Setup {
 		driver.get(AppURL);
 		driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
 		log.info("It's opening the website URL");
-		Thread.sleep(1000);
-		driver.get("https://www.slideteam.net/contacts");
+		
 		try {
 			WebElement iframe = driver.findElement(By.id("livechat-full-view"));
 			if(iframe.isDisplayed()) {
@@ -59,8 +58,21 @@ public class Contact_us_steps extends Setup {
 				catch(NoSuchElementException NCP) {
 					
 				}
+		//clicking on contact us button in footer
+		try {
+			Thread.sleep(1000);
+			WebElement contactUs = wait.until(ExpectedConditions.elementToBeClickable(
+					By.xpath("//a[contains(@title,'Contact Us')]")));
+			js.executeScript("arguments[0].scrollIntoView();",contactUs);
+
+			contactUs.click();
+		} catch (NoSuchElementException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		//driver.get("https://www.slideteam.net/contacts");
 		
-		Thread.sleep(3000);
+		//Thread.sleep(3000);
 		//WebElement Contact= driver.findElement(By.cssSelector("div.links:nth-child(6) > ul:nth-child(2) > li:nth-child(4) > a:nth-child(1)"));
 		//js.executeScript("arguments[0].scrollIntoView();",Contact);
 		
