@@ -136,7 +136,12 @@ Thread.sleep(3000);
 		SimpleDateFormat formatter= new SimpleDateFormat("dd-MM-yyyy 'at' HH:mm:ss z"); 
 	    Date date = new Date(System.currentTimeMillis());  
 	    String Button_Click_Time=formatter.format(date);
-	    System.out.println(Button_Click_Time);  
+	    System.out.println(Button_Click_Time);
+		//verify the text message 
+		String verifySuccessfullMessage = wait.until(ExpectedConditions.elementToBeClickable(
+					By.xpath("//p[@class='thank-you-title']"))).getText();
+			Assert.assertTrue("contact us form is not submitted successfully", verifySuccessfullMessage.contentEquals("Thank You for contacting SlideTeam.net"));
+			System.out.println("contact us form submitted successfully");
 	}
 	
 }
