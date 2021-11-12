@@ -133,6 +133,14 @@ public class Contact_Us_To_Get_Started extends Setup {
 		Thread.sleep(1000);
 		driver.findElement(By.className("text-center")).submit();
 		Thread.sleep(1000);
+		//verift the successfull message
+		String verifySuccessfullMessage = wait
+				.until(ExpectedConditions.elementToBeClickable(
+						By.xpath("//p[contains(text(),'Thank You for submitting your request to SlideTeam')]")))
+				.getText();
+		Assert.assertTrue("contact us form is not submitted successfully",
+				verifySuccessfullMessage.contentEquals("Thank You for submitting your request to SlideTeam Design Services."));
+		System.out.println("form submitted successfully");
 	}
 
 
