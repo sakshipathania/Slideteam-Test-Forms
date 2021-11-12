@@ -5,7 +5,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
-
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.NoSuchElementException;
@@ -31,7 +31,24 @@ public class Questionnaire extends Setup {
 	@Given("^user is already on questionnaire form page$")
 	public void user_is_already_on_questionnaire_form_page() throws Throwable {
 		Thread.sleep(1000);
-		driver.get("https://www.slideteam.net/questionnaire/");
+		//driver.get("https://www.slideteam.net/questionnaire/");
+		try {
+			WebElement presentationServices = wait
+					.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@title='Presentation Services']")));
+
+			presentationServices.click();
+
+			Thread.sleep(1000);
+			// on custom presentation design services
+			WebElement getStarted = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(
+					"//div[@class='service-content']//a[@title='Get Started'][normalize-space()='Get Started']")));
+
+			getStarted.click();
+
+		} catch (NoSuchElementException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		Thread.sleep(1000);
 	}
 
@@ -112,7 +129,16 @@ public class Questionnaire extends Setup {
 		SimpleDateFormat formatter= new SimpleDateFormat("dd-MM-yyyy 'at' HH:mm:ss z"); 
 	    Date date = new Date(System.currentTimeMillis());  
 	    String Button_Click_Time=formatter.format(date);
-	    System.out.println(Button_Click_Time);   
+	    System.out.println(Button_Click_Time);  
+		//verify the message
+		String verifySuccessfullMessage = wait
+				.until(ExpectedConditions.elementToBeClickable(
+						By.xpath("//p[contains(text(),'Thank You for submitting your request to SlideTeam')]")))
+				.getText();
+		System.out.println("message = " + verifySuccessfullMessage);
+		Assert.assertTrue("contact us form is not submitted successfully", verifySuccessfullMessage
+				.contentEquals("Thank You for submitting your request to SlideTeam Design Services."));
+		System.out.println("form submitted successfully");
 	}
 
 	
