@@ -99,7 +99,10 @@ public class Contact_Us_To_Get_Started extends Setup {
 	@Then("^user enter phone number on gs form$")
 	public void user_enter_phone_number_on_gs_form() throws Throwable {
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//*[@id='telephone']")).sendKeys("8295782957");
+		WebElement telephone = wait.until(
+						ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='telephone']")));
+		telephone.sendKeys("8295782957");
+		//driver.findElement(By.xpath("//input[@id='telephone']")).sendKeys("8295782957");
 		Thread.sleep(1000);
 	    
 	}
