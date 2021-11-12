@@ -57,7 +57,24 @@ public class Contact_Us_To_Get_Started extends Setup {
 	@Given("^user is already on contact us to get started form$")
 	public void user_is_already_on_contact_us_to_get_started_form()  throws Throwable{
 		Thread.sleep(1000);
-		driver.get("https://www.slideteam.net/powerpoint_presentation_design_services/hire-a-designer");
+		//driver.get("https://www.slideteam.net/powerpoint_presentation_design_services/hire-a-designer");
+		try {
+				WebElement presentationServices = wait.until(
+						ExpectedConditions.elementToBeClickable(By.xpath("//a[@title='Presentation Services']")));
+
+				presentationServices.click();
+
+				Thread.sleep(1000);
+				WebElement knowMore = wait
+						.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@title='Know More']")));
+				js.executeScript("arguments[0].scrollIntoView();", knowMore);
+
+				knowMore.click();
+
+			} catch (NoSuchElementException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		Thread.sleep(4000);
 		
 	}
