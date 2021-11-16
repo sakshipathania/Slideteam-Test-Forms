@@ -52,10 +52,15 @@ public class ResearchServicesSteps extends Setup {
 	
 		Thread.sleep(3000);
 		try {
-			driver.get("https://www.slideteam.net/powerpoint_presentation_design_services/business_research_services");
-		//driver.findElement(By.cssSelector("div.links:nth-child(6) > ul:nth-child(2) > li:nth-child(10) > a:nth-child(1)"));
-		
-		//*Submit.click();
+			driver.get("https://www.slideteam.net/");
+
+		WebElement reserch_services = wait.until(ExpectedConditions
+				.elementToBeClickable(By.xpath("//a[@class='menu-link'][normalize-space()='Research Services']")));
+		reserch_services.click();
+
+		WebElement submit_btn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(
+				"//div[@class='research_btns']//button[@name='button'][normalize-space()='Submit Your Request']")));
+		submit_btn.click();
 			Thread.sleep(3000);	
 	 }
           catch (NoSuchElementException popup) {
@@ -66,7 +71,8 @@ public class ResearchServicesSteps extends Setup {
 	public void user_enter_name_on_rs_form()  throws Throwable {
 		Thread.sleep(3000);
 		try {
-		driver.findElement(By.id("name")).sendKeys("SlideTeam Testing");
+		WebElement name = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='name']")));
+		name.sendKeys("SlideTeam Testing");
 		Thread.sleep(3000);
 	} catch (NoSuchElementException popup) {
 	  }
@@ -77,7 +83,8 @@ public class ResearchServicesSteps extends Setup {
 	public void user_enter_email_on_rs_form() throws Throwable {
 		Thread.sleep(3000);
 		try {
-		driver.findElement(By.id("form_email")).sendKeys("slidetech.qa@gmail.com");
+		WebElement email = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='form_email']")));
+		email.sendKeys("slidetech.qa@gmail.com");
 		Thread.sleep(3000);
 	} catch (NoSuchElementException popup) {
 	  }
@@ -88,6 +95,8 @@ public class ResearchServicesSteps extends Setup {
 	public void user_enter_mobile_number_on_rs_form()throws Throwable  {
 		Thread.sleep(3000);
 		try {
+		Select select = new Select(wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//select[@id='country']"))));
+		select.selectByValue("91");
 		driver.findElement(By.id("telephone")).sendKeys("5678912345");
 		Thread.sleep(3000);
 	} catch  (NoSuchElementException popup) {
@@ -137,6 +146,14 @@ public class ResearchServicesSteps extends Setup {
 		try {
 		driver.findElement(By.id("finalSubmit")).submit();
 		Thread.sleep(3000);
+			
+		String verifySuccessfullMessage = wait
+				.until(ExpectedConditions.elementToBeClickable(
+						By.xpath("//p[contains(text(),'Thank You for submitting your request to SlideTeam')]"))).getText();
+		System.out.println("message = " + verifySuccessfullMessage);
+		Assert.assertTrue("Research form is not submitted successfully", verifySuccessfullMessage
+				.contentEquals("Thank You for submitting your request to SlideTeam Research Services."));
+		System.out.println("Research form is submitted successfully");	
 		
 	} catch (NoSuchElementException popup) {
 	  }
