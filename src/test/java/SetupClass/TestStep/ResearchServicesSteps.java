@@ -142,7 +142,7 @@ public class ResearchServicesSteps extends Setup {
 	public void user_click_on_submit_button_on_rs_form() throws Throwable {
 		
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("//*[@id='mulitplefileuploader']/div[1]/div/label/span")).click();
+		driver.findElement(By.xpath("//label[@for='upload']")).click();
 		
 		Robot r = new Robot(); 
 		r.keyPress(KeyEvent.VK_ESCAPE); 
