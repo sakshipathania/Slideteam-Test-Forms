@@ -16,10 +16,15 @@ import org.junit.Assert;
 import SetupClass.Setup;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 public class ResearchServicesSteps extends Setup {
-
+	
+        WebDriverWait wait = new WebDriverWait(driver,50);
+	JavascriptExecutor js = (JavascriptExecutor) driver;
 	@Given("^chat popup$")
         public void chat_pop_up() throws InterruptedException
         {
