@@ -156,6 +156,7 @@ public class ResearchServicesSteps extends Setup {
 				.until(ExpectedConditions.elementToBeClickable(
 						By.xpath("//p[contains(text(),'Thank You for submitting your request to SlideTeam')]"))).getText();
 		System.out.println("message = " + verifySuccessfullMessage);
+			
 		Assert.assertTrue("Research form is not submitted successfully", verifySuccessfullMessage
 				.contentEquals("Thank You for submitting your request to SlideTeam Research Services."));
 		System.out.println("Research form is submitted successfully");	
