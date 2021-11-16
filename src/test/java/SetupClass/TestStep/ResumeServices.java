@@ -5,21 +5,25 @@ import java.io.File;
 import java.io.FileWriter;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
-
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.interactions.Actions;
 import java.awt.Robot; 
 import java.awt.event.KeyEvent;
-
+import org.openqa.selenium.JavascriptExecutor;
 import SetupClass.Setup;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
-
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait
 
 public class ResumeServices extends Setup {
-
+ 
+	WebDriverWait wait = new WebDriverWait(driver,50);
+	JavascriptExecutor js = (JavascriptExecutor) driver;
 	@Given("^chat popup1$")
         public void chat_pop_up1() throws InterruptedException
         {
@@ -52,13 +56,18 @@ public class ResumeServices extends Setup {
 	
 		Thread.sleep(3000);
 		try {
-			driver.get("https://www.slideteam.net/resume_service");
+			//driver.get("https://www.slideteam.net/resume_service");
 		//driver.findElement(By.cssSelector("div.links:nth-child(6) > ul:nth-child(2) > li:nth-child(10) > a:nth-child(1)"));
 			//driver.findElement(By.xpath("/html/body/div[5]/div/div[2]/div/div/div/div/div[2]/div/a")).click();
 		
 		//*Submit.click();
-			Thread.sleep(10000);	
-			driver.get("https://www.slideteam.net/resume_service");
+			//Thread.sleep(10000);	
+			//driver.get("https://www.slideteam.net/resume_service");
+		WebElement resume_services = wait
+				.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@title='Resume Services']")));
+		js.executeScript("arguments[0].scrollIntoView();", resume_services);
+
+		resume_services.click();
 	 }
           catch (NoSuchElementException popup) {
 	  }
@@ -135,6 +144,15 @@ public class ResumeServices extends Setup {
 			Thread.sleep(3000);
 		driver.findElement(By.cssSelector("#customresumeservice_form1 > div.clearfix.inner-attach > div.col.submit_file > div > input[type=submit]")).submit();
 		Thread.sleep(3000);
+		
+		String verifySuccessfullMessage = wait
+				.until(ExpectedConditions.elementToBeClickable(
+						By.xpath("//p[contains(text(),'Thank You for submitting your request to SlideTeam')]")))
+				.getText();
+		System.out.println("message = " + verifySuccessfullMessage);
+		Assert.assertTrue("Research form is not submitted successfully", verifySuccessfullMessage
+				.contentEquals("Thank You for submitting your request to SlideTeam Design Services."));
+		System.out.println("Research form is submitted successfully");
 		
 	} catch (NoSuchElementException popup) {
 	  }
