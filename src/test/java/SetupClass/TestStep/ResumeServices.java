@@ -54,7 +54,7 @@ public class ResumeServices extends Setup {
 	@Then("^user is already on Submit your Resume Request form$")
 	public void user_is_already_on_Submit_your_Resume_Request_form() throws Throwable  {
 	
-		Thread.sleep(3000);
+		//Thread.sleep(3000);
 		try {
 			//driver.get("https://www.slideteam.net/resume_service");
 		//driver.findElement(By.cssSelector("div.links:nth-child(6) > ul:nth-child(2) > li:nth-child(10) > a:nth-child(1)"));
