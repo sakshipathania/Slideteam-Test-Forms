@@ -111,7 +111,7 @@ public class DesignServicesFormSteps extends Setup{
 	    String verifySuccessfullMessage = wait.until(ExpectedConditions.elementToBeClickable(
 					By.xpath("//p[contains(text(),'Thank You for submitting your request to SlideTeam')]"))).getText();
 		System.out.println("message = "+ verifySuccessfullMessage);
-			Assert.assertTrue("contact us form is not submitted successfully", verifySuccessfullMessage.contentEquals("Thank You for submitting your request to SlideTeam Design Services"));
+			Assert.assertTrue("contact us form is not submitted successfully", verifySuccessfullMessage.contentEquals("Thank You for submitting your request to SlideTeam Design Services."));
 			System.out.println("Design serviestform submitted successfully");	
 		
 	}
