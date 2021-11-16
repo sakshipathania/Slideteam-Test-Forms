@@ -19,7 +19,7 @@ import cucumber.api.java.en.Then;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
+import org.openqa.selenium.JavascriptExecutor;
 
 public class ResearchServicesSteps extends Setup {
 	
