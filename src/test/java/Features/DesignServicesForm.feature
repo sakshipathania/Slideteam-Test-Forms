@@ -1,3 +1,4 @@
+@Design_Services
 Feature: Test Design Services form
 Scenario: Test Design Services form
 Given user is already on design services page
