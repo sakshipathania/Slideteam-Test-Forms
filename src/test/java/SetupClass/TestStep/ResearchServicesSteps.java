@@ -150,8 +150,7 @@ public class ResearchServicesSteps extends Setup {
 		Robot robot = new Robot();
 
 		robot.setAutoDelay(1000);
-		//StringSelection selection = new StringSelection(
-				"C:\\Users\\SLIDE QA\\circular_flow_of_process_4_stages_powerpoint_slides_templates (34).zip");
+		//StringSelection selection = new StringSelection("C:\\Users\\SLIDE QA\\circular_flow_of_process_4_stages_powerpoint_slides_templates (34).zip");
 		StringSelection selection = new StringSelection("C:\\Users\\Administrator\\Pictures\\Screenshots\\Screenshot (1)");
 
 		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(selection, null); 
