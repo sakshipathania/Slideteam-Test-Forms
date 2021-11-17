@@ -141,16 +141,39 @@ public class ResearchServicesSteps extends Setup {
 	@Then("^user click on submit button on rs form$")
 	public void user_click_on_submit_button_on_rs_form() throws Throwable {
 		
-		Thread.sleep(3000);
-		driver.findElement(By.xpath("//label[@for='upload']")).click();
-		
-		Robot r = new Robot(); 
-		r.keyPress(KeyEvent.VK_ESCAPE); 
-		r.keyRelease(KeyEvent.VK_ESCAPE);
+		//driver.findElement(By.xpath("//label[@for='upload']")).click();
+		WebElement attachFile = wait
+				.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//label[@for='upload']")));
+		js.executeScript("arguments[0].click();", attachFile);
+
+		Robot robot = new Robot();
+
+		robot.setAutoDelay(1000);
+		//StringSelection selection = new StringSelection(
+				"C:\\Users\\SLIDE QA\\circular_flow_of_process_4_stages_powerpoint_slides_templates (34).zip");
+		StringSelection selection = new StringSelection("C:\\Users\\Administrator\\Pictures\\Screenshots\\Screenshot (1)");
+
+		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(selection, null); 
+
+		robot.keyPress(KeyEvent.VK_CONTROL);
+		robot.keyPress(KeyEvent.VK_V);
+
+		//Thread.sleep(1000);
+		robot.keyRelease(KeyEvent.VK_CONTROL);
+		robot.keyRelease(KeyEvent.VK_V);
+		robot.setAutoDelay(1000);
+
+		robot.keyPress(KeyEvent.VK_ENTER);
+                robot.keyRelease(KeyEvent.VK_ENTER);
+
+		Thread.sleep(1000);
+
+		WebElement submit = wait
+				.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@id='finalSubmit']")));
+		js.executeScript("arguments[0].click();", submit);
+	}
 		
 		try {
-		driver.findElement(By.id("finalSubmit")).submit();
-		Thread.sleep(3000);
 			
 		String verifySuccessfullMessage = wait
 				.until(ExpectedConditions.elementToBeClickable(
