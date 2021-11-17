@@ -145,7 +145,7 @@ public class Contact_Us_To_Get_Started extends Setup {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		Thread.sleep(4000);
+		Thread.sleep(1000);
 		
 	}
 
