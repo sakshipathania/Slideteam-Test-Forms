@@ -5,13 +5,14 @@ import java.io.File;
 import java.io.FileWriter;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
-
+import java.awt.*;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.interactions.Actions;
 import java.awt.Robot; 
-import java.awt.event.KeyEvent;
 import org.junit.Assert;
 import SetupClass.Setup;
 import cucumber.api.java.en.Given;
