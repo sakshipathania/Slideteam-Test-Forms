@@ -29,7 +29,7 @@ public class DesignServicesFormSteps extends Setup{
 	@Given("^user is already on design services page$")
 	public void user_is_already_on_design_services_page() throws Throwable {
 	    Thread.sleep(1000);
-	   // driver.get("https://www.slideteam.net/powerpoint_presentation_design_services");
+	   driver.get("https://www.slideteam.net");
 		try {
 			WebElement presentationServices = wait
 					.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@title='Presentation Services']")));
