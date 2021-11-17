@@ -171,7 +171,7 @@ public class ResearchServicesSteps extends Setup {
 		WebElement submit = wait
 				.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@id='finalSubmit']")));
 		js.executeScript("arguments[0].click();", submit);
-	}
+	
 		
 		try {
 			
