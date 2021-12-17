@@ -121,12 +121,13 @@ public class Contact_Us_To_Get_Started extends Setup {
                                 //enter captcha
 				WebElement blog_captcha = wait
 						.until(ExpectedConditions.elementToBeClickable(By.id("captcha_hire_a_designer_captcha")));
-				Thread.sleep(8000);
+				Thread.sleep(3000);
 				blog_captcha.sendKeys("Aj7W2mtf9namwf55");
 
 				driver.findElement(By.className("text-center")).submit();
 
 				// verift the successfull message
+				Thread.sleep(3000);
 				String verifySuccessfullMessage = wait
 						.until(ExpectedConditions.elementToBeClickable(
 								By.xpath("//p[contains(text(),'Thank You for submitting your request to SlideTeam')]")))
