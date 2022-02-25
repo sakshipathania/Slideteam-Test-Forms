@@ -66,8 +66,8 @@ public class ResumeServices extends Setup {
 		WebElement resume_services = wait
 				.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@title='Resume Services']")));
 		js.executeScript("arguments[0].scrollIntoView();", resume_services);
-
-		resume_services.click();
+                js.executeScript("arguments[0].click();", resume_services);
+		//resume_services.click();
 	 }
           catch (NoSuchElementException popup) {
 	  }
